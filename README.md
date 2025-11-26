@@ -54,6 +54,37 @@
 
 **F) Demo- Creating & Training Deep Learning Model**
 
+**IV) Generative AI Foundations (For Beginners)**
+
+**A) What is Generative AI ?**
+
+**B) Predictive AI vs Generative AI**
+
+**C) What is LLM ?**
+
+**D) What is Embedding ?**
+
+**E) What is a Vector Database ?**
+
+**F) Embedding vs Vector Database**
+
+**G) What is Retriever Augmented Generation (RAG) ?**
+
+**H) What is Langchian ?**
+
+**I) Role of Langchain in RAG**
+
+**J) Prompt Engineering & Fine Tuning**
+
+**V) AI Infrastructure**
+
+**A) What is a GPU ?**
+
+**B) Demo: CPU Vs GPU**
+
+**C) What is RDMA Cluster Network**
+
+
 
 
 # **I) AI Concepts and Workloads - (For Absolute Beginners- Optional)**
@@ -337,19 +368,492 @@ This overview provides a solid understanding of the Iris dataset and sets the st
 
 # **M) Demo: Creating & Training your ML Model**
 
+The Iris dataset is one of the most famous and foundational datasets in machine learning. It dates back to R.A. Fisher’s classic 1936 paper and is still widely used for teaching classification techniques. Now that we have studied supervised machine learning theoretically, this is the perfect time to start applying those concepts practically. In this exercise, we will load the Iris dataset, split it into features and labels, create a machine learning model, train it, and finally perform predictions using the trained model.
 
+We begin by splitting the dataset into X and Y. As explained earlier, the X-axis (or the independent variables) contains all the features, while the Y-axis (or the dependent variable) contains the label we want to predict. In the Iris dataset, we drop the ID and species columns from the input features because species is our output label, and ID is irrelevant for prediction. This leaves us with four key features: sepal length, sepal width, petal length, and petal width, which form our X. The Y variable contains only the species column, which represents the type of Iris flower.
+
+To verify this separation, we print X.head() and Y.head() separately. Printing the X values shows the four numeric feature columns, while printing Y shows the species names such as Iris-setosa, Iris-versicolor, and Iris-virginica. This simple step ensures that our data is correctly divided into inputs and outputs before we move into modeling.
+
+Next, we create our machine learning model. We use the Logistic Regression algorithm from sklearn.linear_model. Logistic Regression is a classification algorithm and fits perfectly for this dataset. We initialize the model with default settings and store it in a variable, for example, ml_model. After initialization, we train the model using ml_model.fit(X, Y), where X contains the features and Y contains the corresponding class labels. This is where the model learns patterns from the training data.
+
+Once the model is trained, we move on to testing its predictive ability. Testing is always done on new data (data the model hasn’t seen during training). We create a test input by manually specifying sepal length, sepal width, petal length, and petal width. This simulates a real-world scenario where we would provide measurements of a new flower and ask the model to classify it. We pass this data to the model using ml_model.predict() and store the result as predictions.
+
+Finally, we print the model’s prediction. Using only the four numerical features, the trained model is now intelligent enough to tell us which species the new flower most likely belongs to. For example, it may correctly classify the flower as Iris-setosa. This end-to-end example perfectly demonstrates how machine learning can take raw numerical inputs and produce meaningful predictions based on learned patterns.
 
 # **III) Deep Learning Foundations (For Absolute Beginners- Optional)**
 
 # **A) What is Deep Learning ?**
 
+Deep learning is an advanced branch of artificial intelligence and machine learning, and as the name suggests, it takes us much deeper into understanding how machines can learn. To grasp deep learning properly, it helps to first think about the human brain. Our brain is made up of millions of interconnected nerve cells called neurons. These neurons send signals throughout the body and enable us to perform everything from breathing and walking to speaking and thinking. The key idea behind deep learning is to mimic the way these biological neurons process information and communicate with each other.
+
+In deep learning, this concept is implemented through artificial neural networks. These are computer algorithms inspired by the structure and functioning of the human brain. Just like real neurons are interconnected, artificial neurons—or nodes—are also connected across multiple layers. A human brain contains millions of connections, and similarly, complex deep learning models contain many layers of artificial neurons working together to process data and make decisions. The resemblance between a biological neural network and an artificial neural network is the foundational idea behind deep learning.
+
+One of the major advantages of deep learning is that it reduces the need for manual feature extraction. In traditional machine learning, humans often identify which features of the data are important—for example, labeling images as cat or dog or specifying sepal length and sepal width in the Iris dataset. In deep learning, this dependency is significantly reduced. The neural network automatically learns the important features from raw data, combining feature extraction and classification into a single unified process. Although human involvement does not disappear completely, deep learning greatly minimizes how much manual intervention is needed.
+
+Deep learning models consist of multiple layers, and this is exactly why the term “deep” is used—because data passes through many layers of transformations. Each layer learns increasingly complex patterns. These layers of interconnected nodes work together to recognize patterns that would be difficult to identify manually. This structure allows deep learning to excel in handling unstructured data, such as images, audio, and text—data that doesn’t follow a fixed format. For example, deep learning can recognize faces in images using Convolutional Neural Networks (CNNs) or understand human language through NLP models.
+
+Because deep learning relies heavily on large neural networks, it requires massive amounts of labeled data to train. Unlike machine learning models that might work with thousands of rows, deep learning often needs millions of examples to achieve high accuracy. With such large datasets comes the need for high computational power. This is why GPUs (Graphical Processing Units) are commonly used. GPUs are excellent at processing large volumes of data in parallel, which makes them perfect for training deep learning models. Later, when we discuss AI infrastructure, we will dive deeper into GPUs and how they accelerate training.
+
+Deep learning is now used in a wide variety of applications. These include autonomous driving systems, medical diagnosis, natural language processing, speech recognition, fraud detection, and much more. Much of modern AI—like chatbots, virtual assistants, and image-based search—relies heavily on deep learning models.
+
+Finally, deep learning is supported by powerful tools and frameworks such as TensorFlow, PyTorch, and Keras. Keras, in particular, is a user-friendly deep learning library in Python that makes it easier to build and train neural networks. In upcoming lectures, we will explore Keras in detail with hands-on demonstrations to give you a deeper understanding of how deep learning models are built.
+
 # **B) What is a Neural Network ?**
+
+After understanding what deep learning is, the next important step is to explore what a neural network actually means. Before we dive deeper, let’s quickly recap what we learned earlier: deep learning is a machine learning technique that teaches computers to process information in a way inspired by the human brain. Our brain contains millions of interconnected neurons, and these neurons work together across many layers to help us perform everyday tasks—eating, drinking, thinking, deciding, and so on. These biological neurons form complex networks, and this very idea forms the heart of deep learning.
+
+The core mechanism that powers deep learning is the neural network. In biology, neurons are the building blocks of the nervous system, but in artificial intelligence we work with artificial neurons. So you may ask: what exactly is a neural network? A neural network is simply a machine learning model designed to make decisions in a way that resembles how the human brain works. Inspired by the brain’s structure, scientists created artificial neurons and connected them together so that these networks can learn patterns, identify features, and make informed decisions just as biological neurons do.
+
+A neural network is built from layers of interconnected nodes. Just like biological neurons are connected to one another, artificial neurons also form connections through which information flows. The structure of a typical neural network consists of three major components: the input layer, where the data enters; the output layer, where predictions are produced; and the hidden layers, which sit in between. These hidden layers can be many in number, and they are the reason neural networks become “deep,” giving rise to the term deep learning. These layers enable the network to learn complex relationships in data.
+
+Each artificial neuron in a neural network performs a simple mathematical operation. It receives inputs, multiplies them with weights, adds a bias, and then applies a nonlinear function known as an activation function. This activation function decides whether the neuron should activate or not. To understand this better, imagine feeding an image of a circle to a neural network. Suppose the image is 28×28 pixels. That means we have 784 pixel values, and each pixel is sent to a corresponding neuron in the input layer. These neurons are connected to neurons in the next layer through channels, and each connection carries a weight—for example, 0.8 or 0.2. These weights determine the strength or importance of the signals being passed along.
+
+The process where information moves from the input layer to the output layer is called forward propagation. The network processes the inputs layer by layer, and finally makes a prediction—perhaps it incorrectly predicts the circle as a square. When the prediction is wrong, the neural network adjusts itself using a process called backward propagation. During this process, the weights are recalibrated to reduce the error—for example, a weight of 0.8 might be updated to 0.6. This adjustment continues gradually until the network becomes accurate. This is how neural networks “learn by example,” just like humans learn from repeated observations.
+
+Neural networks also use biases, which are extra parameters added to neurons to help them make better decisions. Together, weights and biases help the network determine the final output through the activation function. As the training progresses, these values keep updating, improving the model’s performance.
+
+There are several types of neural networks, each used for different applications. Feedforward Neural Networks are the simplest form, where information moves only in one direction. Convolutional Neural Networks (CNNs) are widely used for image recognition tasks, such as identifying objects, faces, and scenes in images. Recurrent Neural Networks (RNNs) are commonly used for speech recognition and sequence-based tasks—this is how virtual assistants like Siri or Alexa recognize your voice and respond appropriately.
+
+Neural networks also power technologies we use daily. Predictive text on smartphones uses neural networks to guess the next word you might type—for example, after writing “Hello, how are,” the model predicts “you.” Beyond these examples, neural networks play key roles in self-driving cars (such as Waymo), medical diagnosis, financial forecasting, stock market trading, and many other real-world applications. While the examples seem familiar across machine learning, deep learning, and neural networks, what improves significantly is the accuracy, power, and ability to extract complex patterns automatically.
+
+Ultimately, the entire idea behind neural networks—and deep learning as a whole—comes back to two fundamental goals: identifying patterns and making predictions. That is what every model aims to do. With this, we complete our understanding of what a neural network is.
 
 # **C) Deep Learning Models**
 
+In this video, we’re going to look at some of the most important deep learning models. Along the way, I’ll also introduce a few key terminologies you should be familiar with when studying deep learning or artificial intelligence.
+
+Let’s begin with a quick summary. In the previous lecture, we discussed how artificial neural networks work. When you have an image, it is divided into multiple pixels, and each pixel becomes an input to a neuron. These neurons pass information to the next layer through connected pathways, and each connection carries a weight. Along with weights, we also use biases. The network has an input layer and an output layer, and if the output accuracy is correct, the model performs well. If the accuracy is not correct, we use backward propagation to adjust the weights and improve the performance. That’s the basic idea behind training a neural network.
+
+Now, let’s explore the different types of deep learning models.
+The first model we come across is the Convolutional Neural Network (CNN). As I always say, look at the root word: “convolution.” In simple English, convolution means something with twists and turns, and mathematically it refers to combining two signals to form a third signal. You can think of it as a deep learning technique that moves through various loops or transformations. CNNs are ideal for image and video processing. For example, if you want to classify whether an image contains a cat or a dog, you would use a CNN. Social media platforms also heavily rely on CNNs for image classification tasks.
+
+The next model is the Recurrent Neural Network (RNN). Again, look at the root word: “recurrent,” meaning something that repeats. RNNs are designed for sequential or time-dependent data. For instance, if you want to predict tomorrow’s stock price, you may use inputs such as yesterday’s and today’s prices. The network uses weights and biases, applies an activation function, and produces an output—in this case, the predicted stock price for the next day. RNNs also work well with natural language tasks, such as predicting the next word in a sentence. That’s how auto-complete on your smartphone works; when you type “How are,” it predicts “you?” automatically.
+
+A special type of RNN is the Long Short-Term Memory Network (LSTM). LSTMs are excellent at handling long-range dependencies in sequences. A perfect example is Google Translate. When you type “Hello, how are you?” in English, the system identifies the language and translates it to another language—such as French—while maintaining context. LSTMs enable this capability, and they also support voice-based translation.
+
+Next, we have GANs (Generative Adversarial Networks), which have become incredibly popular in recent years. GANs consist of two neural networks: the generator and the discriminator. These networks compete with each other. The generator creates fake images or videos, while the discriminator tries to distinguish between real and fake. The goal is for the generator to produce results so realistic that even the discriminator cannot detect the difference. This technique is behind deepfake videos—highly realistic but artificially generated footage of events that never actually happened. GANs make it possible to create photorealistic images and videos.
+
+Finally, we come to one of the most important models in modern AI: the Transformer Model. This is the heart and soul of Generative AI (GenAI), which is extremely popular today. Transformers use a mechanism called self-attention to process sequential data more effectively than traditional RNNs or LSTMs. We will study transformers in detail in the next lecture, but for now, think of them as the foundation behind systems like OpenAI’s GPT-3. Models like ChatGPT use transformers to generate human-like text for applications such as chatbots, content creation, essay writing, poetry generation, and much more.
+
+So this lecture was meant to build a basic understanding of the major deep learning models without diving too deep into the technical complexities. The key models to remember are:
+
+CNNs for image and video processing
+
+RNNs for sequential tasks like stock prediction or text auto-completion
+
+LSTMs for long-range sequence learning, such as translation
+
+GANs for generating realistic fake images and videos (deepfakes)
+
+Transformers as the backbone of modern generative AI
+
+With this, we come to the end of the lecture.
+
 # **D) What is a Transformer Model?**
+
+What if I tell you that what we are going to study today is the Transformer Model, which is the backbone of modern Generative AI? Everything you see today in the form of ChatGPT or any generative AI features offered by cloud vendors—at the heart and soul of all of it—is the transformer model. And this transformer model is a type of deep learning model that we should definitely be aware of.
+
+So, what exactly is a transformer model?
+
+As I always say, look at the root word. Whoever coined the term “transformer model,” why did they call it transformer? Think back to your physics classes. In electrical circuits, a transformer is a device that transfers electric energy from one circuit to another. You have Circuit C1 and Circuit C2, and the transformer simply transfers the electrical energy from C1 to C2.
+
+Now, when we talk about transformers in neural networks, the idea is similar. Transformers are a type of neural network architecture that have revolutionized the field of Natural Language Processing (NLP). This is truly a game changer. And once you see the architecture diagram of a transformer, you can easily correlate how information is transferred from one stage to another—just like electrical energy is transferred between circuits.
+
+So here is how the transformer architecture looks. You have an input layer, an output layer, a feed-forward network, and two important components: the Encoder and the Decoder. You may ask: what is an encoder? Encoders are neural network layers—usually multiple layers—that process the input sequence and produce a continuous representation of it. You can consider this as the embedding of the input.
+
+Then we have the Decoder. The decoder uses these embeddings to generate the output. Don’t worry if this feels abstract right now; we will understand it with examples. For now, simply remember that transformers use a unique architecture based primarily on self-attention.
+
+Now, what is attention? For the moment, think of “attention” as “context.” This model understands context—it knows what you really mean. Transformers use self-attention to weigh the importance of different parts of the input. In other words, it can look at the entire sequence of data and decide which parts are more relevant when generating the output.
+
+And here comes the biggest advantage of transformers:
+Unlike RNNs or LSTMs, transformers process the entire sequence in parallel.
+This is why ChatGPT responds so fast. You simply ask it to write a poem, an email, or a story, and within seconds it generates it—because everything is processed simultaneously. It has already been trained on humongous amounts of data, and from that training, it draws inferences instantly.
+
+Compare this with RNNs. In RNNs, the model processes data step-by-step. For example, if you type: “Hello, how are…”, the RNN looks at each word sequentially to predict “you?”. It’s more like the auto-correct or auto-complete feature on your phone. But transformers do not work like that—they handle entire sequences together.
+
+Now let’s come back to the important concept we hinted at: Attention.
+
+The core of the transformer is the attention mechanism. Even if you don’t understand the full architecture, if you understand attention, you understand the essence of transformers. Attention allows the model to focus on the right parts of the input while producing the output. And this enhances the model’s ability to understand context and relationships.
+
+Let’s look at an example. Take the word “bank.”
+In the sentence “the bank of the river”, “bank” refers to the side of the river.
+In the sentence “money in the bank”, “bank” refers to a financial institution.
+The word is the same but the meaning is completely different.
+This is where attention shines. The transformer remembers context—so it understands the meaning based on surrounding words.
+
+Now let’s take another example: writing a story.
+If you ask a transformer model, “Write me a story,” 95% of the time stories begin with “Once upon a time.” But how does the model decide that?
+
+This happens through a concept called softmax, which converts scores into probabilities. Suppose the model has options like “once,” “somewhere,” “there,” or completely unrelated words like “zygote.” It will give weightage to each option based on context. Since it knows you want a story, “once” becomes the most probable choice. Then it predicts the next word—“upon”—then “a,” then “time,” and so on.
+
+Again, this entire process happens in parallel, not step by step.
+
+As we continue, remember two key components of transformers:
+
+Encoder
+
+Decoder
+
+Each encoder and decoder consists of multiple layers called transformer blocks, and every block contains:
+
+Self-attention layer
+
+Feed-forward neural network
+
+Also remember, transformers do not need recurrent layers, and this parallelism makes them extremely scalable. That’s why GPUs—with thousands of cores running in parallel—are the preferred hardware for training transformer models.
+
+Transformers have become the backbone of many state-of-the-art NLP models, such as:
+
+Machine Translation (English → German, etc.)
+
+Text Generation
+
+Summarization
+
+Question Answering
+
+Two popular transformer-based architectures are:
+
+BERT — Bidirectional Encoder Representations for understanding language
+
+GPT — Generative Pre-trained Transformer
+
+And yes, the T in GPT stands for Transformer, which is exactly why we are studying this model now.
+
+Beyond NLP, transformers are also making their way into computer vision and audio processing—anywhere tasks can be parallelized and context matters.
+
+And with this, we come to the end of our lecture on the transformer model.
 
 # **E) Demo: GANs - Deep Fake Video**
 
+In the previous video, we talked about GANs, where we discussed the two main components: the generator and the discriminator. I also mentioned that one of the most popular applications of GANs is the creation of deepfake videos. Now, you might wonder—what exactly is a deepfake video?
+
+A deepfake video is essentially a type of artificial intelligence technique used to create highly convincing fake images, audio clips, or videos. The term “deepfake” refers to both the technology behind it and the final output, which is completely fabricated. It’s not real content, which is why we call it “fake,” and because it uses deep learning techniques, the word becomes “deepfake.” So, using ML and DL models, we are able to generate extremely realistic—but entirely artificial—media.
+
+Let’s look at an example to understand this better. There was an AI developer who created a deepfake video of Tom Cruise. I’m sure all of you know who Tom Cruise is. This video went viral across social media platforms like TikTok and Instagram, attracting millions—even billions—of views. During a talk at TED, the host asked if they could have their own Tom Cruise deepfake video, and the developer actually shared one. In the clip, the AI-generated Tom Cruise says:
+
+“What’s up, Internet? I’m north of the border, at the TED conference. It’s not short for Theodore, but nobody calls me Thomas, so it’s cool. It’s Tom at TED. Yes, I Canada. Seriously though, everybody here—very nice, very polite. Especially the waves.”
+
+This short clip was a perfect demonstration of how realistic deepfake videos can be. Even though Tom Cruise never said those lines or attended that event, the AI-generated version looked and sounded almost identical to him.
+
+Deepfake videos are typically created in one of two ways. The first method uses an original video of a target person, and the AI manipulates it to make them say or do things they never actually did. The second method involves swapping one person’s face onto another person’s body in a video. This process is commonly known as a face swap. Both techniques rely heavily on deep learning models to capture facial expressions, movements, and voice patterns, and then replicate them with stunning accuracy.
+
+With this, I think you now have a clear understanding of what deepfake videos are, how they are created, and why GANs play such an important role in generating them.
+
 # **F) Demo- Creating & Training Deep Learning Model**
+
+Now it's time to walk through a quick demo based on the deep learning methodology we have learned so far. For this demonstration, we will use a dataset available on the Kaggle website. If you visit Kaggle, you will find the Pima Indians Diabetes Database. You may wonder: who were the Pima Indians? The Pima were a group of Native Americans living in the region that is now central and southern Arizona. Researchers collected medical data from this community and created a diabetes-focused dataset that is widely used in machine learning and deep learning experiments.
+
+According to the description, this dataset originates from the National Institute of Diabetes and Digestive and Kidney Diseases. The main goal of the dataset is to predict—based on diagnostic measurements—whether a patient has diabetes. The dataset includes several health-related features for each patient and uses these measurements to determine whether the individual is diabetic or not. One important thing to note is that all the patients in this dataset are females and at least 21 years old, and all belong to Pima Indian heritage. This makes the dataset highly specific and controlled for certain demographic factors.
+
+You can either download the data directly from Kaggle or use the copy found in the resources section. The dataset contains multiple columns, and the last column is extremely important: it contains the value 1 if the person has diabetes and 0 if they do not. As for the other columns, they represent various medical metrics. These include the number of pregnancies, plasma glucose concentration, blood pressure, triceps skinfold thickness, insulin levels, body mass index (BMI), diabetes pedigree function, and finally, the age of the patient. All of these factors together help determine whether a patient is likely to have diabetes.
+
+With this understanding, we can now start building a deep learning model. We will create our own neural-network-based model and train it using this diabetes dataset. As always, it is best if you follow along. Start by opening Anaconda and launching a Jupyter Notebook. Once the notebook opens, create a new Python kernel and get ready to begin. Before we proceed, there are two very important terms you should know: Keras and TensorFlow. Keras is an open-source library that provides a Python interface for building artificial neural networks. It acts as a high-level API that makes deep learning easier to implement. TensorFlow, on the other hand, is a powerful open-source library developed by Google for machine learning and artificial intelligence, with a strong focus on training and deploying deep neural networks. Keras actually runs on top of TensorFlow, which is why we use the two together in this demo.
+
+The first step is to import all the necessary Python libraries. Simply copy the import commands and paste them into your Jupyter Notebook. Once you run the cell, your environment will be ready. Next, we load the dataset. Here, you provide the path to your local file—this path will differ depending on your system—and specify that the file is comma-delimited. After loading the data, we must split it into the input features (X) and the output variable (Y). The X values correspond to columns 0 through 7, representing all the predictor variables. The Y value is simply the final column, which indicates whether the individual has diabetes.
+
+Once the data is ready, we define our Keras model. This involves creating a sequential model and specifying the layers of our neural network. After defining the model, we compile it. For compilation, we use the Adam optimizer and track accuracy as our performance metric. Compilation prepares the model for training. The next step is to train the model using the model.fit() command, where we pass in the X values, Y values, and specify the batch size. When you run this cell, the model begins learning from the data.
+
+After training, we evaluate the accuracy of the model. When we run the evaluation step, we find that the model is approximately 77% accurate. If we train the model again, the accuracy may improve slightly—this is a common behavior in deep learning. In this case, the accuracy increases from about 77.21% to 77.34%. This demonstrates why the size and quality of the dataset are so important. Larger datasets generally allow the model to learn more patterns and achieve better accuracy.
+
+Next, we make predictions using the trained model. After generating the predictions, we compare the first 50 results to the actual expected outcomes. In many cases, the model correctly identifies whether the person is diabetic or not. However, there are also cases where the model fails. For example, the model may predict a 0 (non-diabetic) while the expected result is 1. These errors occur because the dataset is relatively small and the model has limited information to learn from. With a larger dataset, the accuracy would likely increase.
+
+Through this demo, you can clearly see how deep learning works in practice. You have already studied the theory earlier, and now you can connect it with the hands-on implementation using Python, Keras, and TensorFlow. You’ve seen how data is prepared, how the model is built, trained, evaluated, and then used for predictions. I hope this practical walkthrough has helped strengthen your understanding of deep learning.
+
+# **IV) Generative AI Foundations (For Beginners)**
+
+# **A) What is Generative AI ?**
+
+So if you ask me today which is the hottest and most talked-about technology in the IT world, I would say without any doubt it is Generative AI. Now you might immediately ask, “But what exactly is Generative AI?”—and that's a great question.
+
+Before we dive into the meaning of Generative AI, I want you to recall the onion structure we discussed in our very first lesson. At the outermost layer, we had Artificial Intelligence. Then inside that, we had Machine Learning, which is a subset of AI. As we peeled further, we understood Deep Learning, which uses neural networks and forms a subset of Machine Learning. And now, inside that deep learning layer, sits Generative AI. So remember this important point:
+Generative AI is a subset of Deep Learning.
+Whatever concepts you learned in Deep Learning—especially neural networks—those form the backbone of Generative AI. This is why a strong understanding of Deep Learning always helps when you move into Generative AI.
+
+So what is Generative AI? As always, I tell you to focus on the root word. The root word here is generate. Generate means to create, to produce, to build something new. So Generative AI is a type of AI that can actually create content—something new that did not exist before. And this content can be anything: text, images, music, videos, and even code. Yes, you can even ask a Generative AI system to write a Python program for you, whether it is a simple script or a complex piece of code.
+
+Generative AI systems learn from extremely large datasets. So again, two things matter a lot here—quality and quantity. A large amount of good-quality data is needed because these models learn patterns, styles, structures and then generate new content based on what they have studied. This ability to understand complex patterns is what allows them to produce such high-quality outputs.
+
+As mentioned earlier, the backbone of Generative AI is Deep Learning, especially neural networks. Most modern generative models, including the ones behind tools like ChatGPT, rely on deep neural networks trained on huge amounts of data. These networks work behind the scenes to generate responses, images, music, or whatever content you request.
+
+Now let’s talk about the applications. Generative AI is used widely in art, where it can create stunning new images, paintings, or designs. In entertainment, it can create videos and animations. In marketing, companies use it to create ad content, taglines, and visuals. And in software development, developers can ask it to write entire code snippets or even debug existing code. So the possibilities are massive.
+
+One of the biggest advantages of Generative AI is efficiency. Earlier, content creators had to write, rewrite, edit, and polish everything manually. Now, with generative systems, you simply provide a prompt or input, and within seconds, you receive an entire article, poem, presentation, or design. The creation process gets automated, reducing hours or even days of effort into minutes.
+
+However, like any powerful technology, Generative AI comes with challenges, especially around copyright, originality, and misuse. Anyone can generate content and claim it as their own, which raises ethical concerns. So while using AI-generated material, we must be aware of these issues and use the technology responsibly.
+
+Generative AI continues to evolve at a rapid pace. Every week, you will hear about new models being introduced—faster, smarter, and more accurate than before. These systems start from a simple user prompt and expand it into a full piece of content. For example, if you say, “Write a poem about my wife, whom I met in London,” and provide a few personal details, the AI will instantly produce a complete, heartfelt poem as if written by a poet. This is the power of user-prompted generation.
+
+Finally, Generative AI is impacting multiple disciplines—journalism, design, education, marketing, programming—and transforming how work is done. But again, understanding its impact and limitations is equally important.
+
+So for now, the key takeaway is:
+Generative AI = a subset of Deep Learning that focuses on creating new content.
+
+In the next video, we will explore the difference between Predictive AI and Generative AI.
+
+# **B) Predictive AI vs Generative AI**
+
+Okay, so the million-dollar question that is always asked is:
+What is the difference between Predictive AI and Generative AI?
+
+Now what if I tell you that everything we have learned so far—whether it was Artificial Intelligence, Machine Learning, or Deep Learning—most of those topics were actually dealing with patterns. And based on these patterns, I told you repeatedly: What are you looking for?
+Yes—Predictions.
+
+So all of that falls under Predictive AI.
+But then what exactly is Generative AI?
+
+As I told you in the previous lecture, the root word in Generative is generate, which means to create. So always remember this one golden sentence:
+In Generative AI, you are creating new content.
+
+Now let’s take a deeper look.
+
+The function of Predictive AI is very clear—it is designed to analyze the existing data and make predictions. The root word here is predict. You are predicting future events or outcomes based on the data that you have trained the model on. And like I always say, when we talk about data, two things matter the most—quality and quantity. The better the data, the better the predictions.
+
+Now let us talk about Generative AI.
+Generative AI focuses on creating new content. It creates new data that resembles the training data, and sometimes even produces completely original output. This could be text, this could be images, videos, music, or even code. So yes, you can ask a Generative AI system to write a Python program for you as well.
+
+When we look at usage, Predictive AI is mainly used for data analysis. It often involves statistical methods and machine learning algorithms to identify patterns and trends in historical data. For example, when you studied image classification—distinguishing between a cat and a dog—or when we talked about the Iris flower dataset where we predicted whether a flower is Iris Setosa, Iris Virginica, or Iris Versicolor based on features. All of that is Predictive AI.
+
+We also discussed stock market prediction, where models try to predict the future price of a stock. Again—based completely on historical data patterns.
+
+But things change when we enter the world of Generative AI.
+Here, the focus is on content creation. Generative AI can generate text, images, music, synthetic data, simulations—anything that involves creating new output. You give a prompt, and it creates something for you.
+
+Let’s talk about applications.
+Predictive AI is used in areas like weather forecasting, stock market prediction, market price forecasting, risk assessment, customer behavior prediction, and fraud detection. These are all cases where we want to know “What will happen next?”
+
+Generative AI, on the other hand, is used in art, design, media creation, synthetic dataset generation, and creating realistic simulations. Anywhere new content is being created, that is where Generative AI shines.
+
+Predictive AI also helps in providing insights, recommendations, and better decision-making. For example, we saw recommender systems—like Netflix suggesting movies or Udemy suggesting related courses. These systems analyze your data and predict what you might like next. This is Predictive AI.
+
+But Generative AI has the ability to produce creative and novel outputs that go beyond the input data. If you want a poem, if you want a letter, if you want an essay—just provide a few words, and Generative AI expands them into beautiful, full-length content. That is the magic of generative models.
+
+Now a very important conceptual point:
+Predictive AI is reactive in nature, while
+Generative AI is proactive in nature.
+
+Predictive AI reacts based on existing data and tells you what is likely to happen next. It is only analyzing.
+Generative AI proactively creates new data points, new content, new ideas. You are not just analyzing anymore—you are generating.
+
+For more examples, Predictive AI includes credit scoring models, demand forecasting, supply chain prediction, and predictive maintenance.
+Generative AI includes ChatGPT and GPT models for text, DALL·E for images, AI-based music composition, synthetic data generation, and AI code generation.
+
+With this lecture, I believe you now have a very strong and clear understanding of the differences between Predictive AI and Generative AI.
+
+# **C) What is LLM ?**
+
+Okay, so one of the most important concepts that we study in Generative AI is something called LM. Now everywhere you go, you will hear the word “LM.” But what exactly is LM?
+
+LM stands for Large Language Models.
+As the name suggests, these models are really large. They are not small machine learning models that you may have seen earlier. Here we are talking about models with multi-millions or even billions of parameters. That is why they are called large and why they are so powerful.
+
+And since the word “language” appears in the name, that tells you they are related to NLP—Natural Language Processing, which we studied earlier. So what are LLMs?
+LLMs are sophisticated AI systems designed to process, understand, and generate human language.
+
+This means that whenever you give an input—for example, “Write a poem” or “Create a short story”—the LM is able to understand your request, process it, and then generate human-like text based on that. That is why LLMs are at the heart of modern Generative AI.
+
+Now let’s talk about the most important aspect: scale and complexity.
+The word large is not just for show. As the number of parameters increases, the complexity of the model also increases. When I say parameter, don’t worry—we will go deeper into what parameters actually mean. For now, just understand that LLMs are composed of millions or billions of these parameters, which is what makes them capable of producing such intelligent and human-like responses.
+
+The best example is GPT-4 by OpenAI, which has an extremely large number of parameters and can generate very realistic and coherent text.
+
+But now the question comes: What are parameters?
+Let me give you a simple analogy. Imagine you are building a house. The house will have different parameters—like the number of rooms, the size of each room, the layout, the design, the type of flooring, the color of the walls. All of these are parameters of your house.
+
+Now translate this to a large language model. Its parameters relate to what it can do. For example, the model may have the ability to generate text, translate languages, summarize articles, write poems, answer questions, create stories, or write letters. These are only small examples—LLMs have billions of such internal parameters that allow them to perform a huge range of tasks. This is why they become so complex.
+
+LLMs are trained on massive datasets—far beyond normal sample data you might use in machine learning. They are trained on a wide range of internet text. For example, GPT-4 is trained on huge collections of books, articles, websites, and other diverse text sources. This vast training data helps the model understand grammar, context, reasoning, and even creativity.
+
+Now let’s look at some popular LLMs. The list keeps expanding, but some of the major ones are:
+
+– From OpenAI: GPT-3, GPT-4
+
+– From Google: Bard (earlier) and now Gemini, which is becoming very popular and may soon be available on mobile devices
+
+– Cohere, which is widely used in Oracle Cloud (OCI)
+
+– LLaMA from Meta (Facebook), which is open-source and heavily used in research
+
+These are some of the leading large language models in the industry today.
+
+Now why do we use LLMs?
+Because they help in natural language understanding and natural language generation. That means they understand human language and can respond in the same style. They can write essays, poems, simulate conversations, answer questions, and create human-like text in many forms.
+
+The applications are huge. LLMs can be used to build chatbots, create content, translate languages, summarize documents, analyze text sentiment, and much more. For example, GPT-4 currently powers some of the most advanced chatbots used around the world.
+
+Because they are built using machine learning—more specifically deep learning—these models are constantly improving. Remember, with deep learning we studied neural networks, which mimic how the human brain works. LLMs use a special type of neural network architecture called transformers, which we already studied.
+
+This architecture allows them to process sequences of data efficiently. GPT-4, for example, is based on transformer architecture, which makes it great at understanding long paragraphs, context, and relationships between words.
+
+A very important point is that LLMs are designed for continuous learning and improvement. They keep improving over time as they get more feedback, more usage, and more diverse prompts from users all around the world. That is why their performance gets better over time.
+
+Another advantage is customization. You can use an existing pre-trained model, or you can customize (fine-tune) it for industry-specific tasks. For example, GPT-4 can be fine-tuned for legal language, medical reports, financial analysis, and many specialized domains. This is very useful when you want highly accurate output for a specific field.
+
+Now if we look at this simple architecture diagram, we can see different types of inputs such as text, structured data, or even voice. These inputs go to the training model. The large language model adapts using the training data, learns continuously, and generates outputs. These outputs can include instructions, information, object recognition, image captioning, Q&A, quizzes, or even sentiment analysis.
+
+For example, when we study OCI language services, we will see how LLMs perform tasks like identifying whether a text expresses positive, negative, or neutral sentiment.
+
+So by now, I believe you have a very clear understanding of what an LM—or Large Language Model—is, how it works, what it can do, and why it is such an important part of Generative AI.
+
+# **D) What is Embedding ?**
+
+Embeddings are a really important concept in generative AI and are considered the backbone of it, especially when you study systems involving vectors, vector databases, or concepts like RAG. Embedding is essentially a way of converting the features of an object, such as a word, into a vector of real numbers, and while this is a theoretical definition, the main idea is that you convert the features of an object into numbers because vectors are nothing but numbers. To better understand this, consider a diagram using the example of a cat. A cat has several features, and we can assign numbers to each feature, such as whether it is a living being, belongs to a particular family like tigers or lions, whether it is human, its gender, whether it represents royalty, whether it is a verb, or whether it is plural. For each of these features, an embedding algorithm assigns specific numeric values — for example, the feature “living being” may get 0.6, while something like “royalty” may get a negative number that indicates it's not royalty. 
+
+Similarly, words like houses get a positive value under plural, and the word kitten gets values very close to cat because both share similar features. These features form a seven-dimensional representation since there are seven features, but working in high dimensions is difficult, so we apply dimensionality reduction, where these embeddings are reduced from 7D to 2D. Dimensionality reduction transforms complex high-dimensional data into a simpler lower-dimensional space for easier visualization while still preserving as much significant information as possible. After reduction, we can visualize the embeddings in a 2D space; words with similar meanings or related relationships will appear close together—like cat and kitten—while unrelated words like dog or houses appear farther away. You can also observe relationships such as man-woman or king-queen, where the algorithm captures similarities in features like being a living being, being human, or having a certain gender. This demonstrates how generative AI systems understand context, meaning the system recognizes both meaning and relationships between words. The process is: start with a word, convert it into a word embedding (a numerical vector), reduce it from a high-dimensional representation to 2D, and visualize it in 2D where similar or related items cluster together. Embeddings transform complex data such as words or images into numerical vectors that computers can understand because computers work with numbers. 
+
+These vectors help the system understand similarities—for example, cat and kitten are closer than cat and house. They also simplify complex data by breaking many features into smaller, easier-to-process numbers. Embeddings are used everywhere, such as in language understanding and recommender systems, and popular embedding methods include Word2Vec by Google, GloVe (Global Vectors), and BERT (Bidirectional Encoder Representations from Transformers). Computers learn to create embeddings by training on large amounts of data, and better data leads to better embeddings. 
+
+Advanced embeddings can also understand context, such as distinguishing between the word “bank” used as a riverbank and “bank” used for money. For example, if you were to place an apple in a 2D embedding space, it would fall near other fruits like strawberry and banana based on shared features, just like sports items like football and basketball cluster together, or vehicles with wheels like bicycles and cars cluster in their own category. Overall, embedding is simply a way of converting the features of an object—like a word—into a vector of real numbers so that machines can understand meaning, similarity, and context. In the next step, you can learn about vectors in more detail.
+
+# **E) What is a Vector Database ?**
+
+Okay, so in the previous video we understood what embeddings are. Now it’s time to take a look at vectors and vector databases. A vector database is a type of database designed specifically for storing, indexing, and querying vectors, which are arrays of numbers representing data in a high-dimensional space. If we recall what we learned about embeddings, when we take a word like “cat,” we extract its features and assign numbers to each feature. These sets of numbers form what we call vectors. Essentially, all we are doing next is storing these vectors—these arrays of numbers or embeddings—into a database, and that database is known as a vector database.
+
+You can imagine this by comparing it to relational databases like Oracle or MS SQL Server, where you store tables of relational data. In contrast, vector databases store vectors or embeddings. When you look at the diagram, you can see that different kinds of inputs can be processed. The input could be a document, a picture, a sound file, or even a video. These inputs are passed through different transformers: an NLP transformer for text, an audio transformer for sound, and so on. The transformer generates a set of numbers—embeddings—and these vectors are then stored inside the vector database.
+
+Once data is stored, you can query it, index it, and perform searches, just like you would with any other database. The purpose is straightforward: vector databases are primarily used for storing embeddings that represent complex data like images, text, or audio in a numerical form that machines can understand and process. This is exactly what we discussed earlier—embeddings exist to break down complex objects into smaller numerical representations. For example, when we studied the example of the cat with seven dimensions being converted into a two-dimensional space, we saw how high-dimensional information can be reduced while keeping significant meaning.
+
+These vectors are stored so we can perform similarity searches. Examples include “Is a cat similar to a kitten?” or “How close are they positioned in vector space?” Similarly, “Is a man related to a woman?” or “Is a king related to a queen?” These kinds of comparisons are done through similarity search mechanisms that vector databases are optimized to perform. They allow quick retrieval of items most similar to a given query. Some common similarity measures include Euclidean distance and cosine similarity, both of which look at how close vectors are in their multi-dimensional space.
+
+Vector databases are widely used in machine learning, artificial intelligence, and recommendation systems. Think about Netflix—recommendation systems depend heavily on similarity search, such as finding what kind of movies you like based on prior viewing. Vector databases help handle very large volumes of data because the data, once converted into embeddings, becomes compact, structured, and easier for machines to work with. They support scalability, efficient querying, and are designed for big data applications.
+
+Another important thing is that vector databases can be integrated with machine learning models. This allows them to directly store and query embeddings generated by these models. Most modern vector databases are built to work seamlessly with ML pipelines. They provide high-performance, real-time search and retrieval, which is essential for interactive applications and services. Just like traditional databases let you query tables, vector databases let you query vectors, but the purpose here is specifically to perform similarity searches.
+
+So with this, we come to the end of understanding vector databases. In the next video, we will explore the relationship between embeddings, vectors, and vector databases. Thanks for watching.
+
+# **F) Embedding vs Vector Database**
+
+A lot of times when we introduce concepts like embeddings, vectors, and vector databases, people get confused because they aren’t able to clearly understand the differences between an embedding, a vector, and a vector database. That is why it becomes important to break them down and see how they are actually connected to each other. The best way to understand this is to always begin with the real world data. Real world data can be in the form of text, images, videos, or sound. All of these represent raw inputs that we want a machine to understand.
+
+As we studied earlier, embedding is the process that transforms real world data into numerical numbers or vectors. These embeddings capture the important features of the data. For example, in the cat–kitten example, we took real world data and used embeddings to create numerical vectors. Embedding is the step that converts raw, complex information into usable numerical representations that a machine can process.
+
+These vectors represent the features of the data. Vectors are nothing but the numerical representation of data created through the embedding process. Each vector is a list or array of numbers that encodes the characteristics of the data. When we saw the example of the cat—its category, whether it is feline, male or female, etc.—each of those features became part of the vector. From a high-dimensional representation like seven dimensions, we were able to reduce it to two dimensions, but the core idea remains the same: vectors are the numerical feature-based representation of the object.
+
+Once you have these vectors, you need to store them somewhere. Just like you store your regular relational tables in Oracle or SQL Server, you store vectors in a vector database. A vector database is a special kind of database designed to store and efficiently retrieve large collections of vectors. It uses optimized techniques to quickly find vectors that are similar to each other. This is what enables similarity searches—like identifying that a man is related to a woman, a king to a queen, or a cat to a kitten.
+
+We also discussed how vectors help group similar items, like fruits. If you create a vector for an apple, it will naturally fall close to other fruits because of shared characteristics. The vector database simply stores these vectors and retrieves them efficiently when needed. The flow is simple: real world data is transformed through embeddings to create numerical vectors, and these vectors (which represent the features of the data) are then stored in a vector database.
+
+Finally, all of this happens in the backend, but the user interacts with it through an application at the frontend. Vector databases are used in various applications, especially similarity search, where we look for data points that resemble one another. A common example is Netflix, where the recommender system finds movies or shows similar to what you like. The same principle applies to many other recommendation systems. With this, you now have a clear understanding of the relationship between embeddings, vectors, and vector databases.
+
+# **G) What is Retriever Augmented Generation (RAG) ?**
+
+Hello folks, today we are going to study a very important concept within AI and generative AI called RAG, which stands for Retriever-Augmented Generation. At first, the term might sound a bit complex, but as I always suggest, it helps to break the word down and understand the root meaning. Whoever coined the term clearly had a logical idea behind it. The word retriever suggests fetching something, generation refers to creating something, and augment means adding value. So, RAG essentially means retrieving information, augmenting it with additional intelligence, and then generating a meaningful response.
+
+To understand this, consider a simple example from the non-AI world. Suppose you are doing a PhD and you need to write a research paper. What would you do? You would go to a library, browse the internet, and gather information from various books and sources. These sources act as your knowledge base. Once you collect the information, you combine it all and write your paper. RAG works in a similar way. A user asks a question, the system looks into its knowledge base—which in our context is often a vector database—and retrieves the most relevant information. This is the retrieval stage.
+
+Once the relevant information is retrieved, that retrieved text is combined with the user’s query. Together, they form a complete prompt or input. This prompt is then passed to a large language model such as ChatGPT or Gemini. The LLM uses both the user’s question and the retrieved content to generate a high-quality response. So in RAG, you are using the best of both worlds: your organization’s internal data as the source of truth and the power of the LLM to produce a refined and contextually accurate output. That is the essence of Retriever-Augmented Generation.
+
+A natural question is: where do we actually use RAG? Think of a bank or any enterprise company. They have private, sensitive data stored inside their internal infrastructure. They do not want external LLMs like ChatGPT to directly access their confidential information. This is where vector databases step in. The retrieval happens from internal, secure data sources, while only the generation is outsourced to the LLM. In this way, RAG allows organizations to maintain full control over their data while still benefiting from generative AI capabilities.
+
+In simple theory, RAG uses a retriever to find the relevant information and a generator to create the response. For example, if you ask, “What is climate change?”, RAG retrieves relevant scientific articles stored in your internal knowledge base and then uses the LLM to create a clear, concise explanation. This significantly improves response quality. Earlier, developers often had to hard-code responses or manually prepare structured rules. But with RAG, the system dynamically searches your source data in real time and generates accurate, detailed answers.
+
+Another example is a customer support chatbot that uses RAG to fetch product details from an internal database. This ensures the responses are precise and fully aligned with company-specific information. RAG is highly adaptable across domains—customer service, education, enterprise chatbots, and any application where factual accuracy and context are essential. Organizations often cannot rely solely on the LLM’s built-in knowledge, so RAG ensures responses remain grounded in their own internal documents.
+
+RAG also enhances contextual understanding. Throughout our discussions, we’ve emphasized the importance of context. With RAG, the context is retrieved directly from enterprise data sources, and the LLM interprets that context correctly. This helps avoid mistakes that purely generative models sometimes make, such as mixing up meanings—like “bank” as a financial institution vs. “bank” of a river. By grounding the generation in real documents, RAG ensures responses are accurate and contextually appropriate.
+
+Let’s understand how RAG works in practice. First, you have your data sources: documents, PDFs, images, videos, and so on. All these are passed through an embedding model, which converts them into numerical vectors. These vectors are then stored in a vector database. This covers steps one and two: embedding the data and storing it in the vector DB. Next comes the user query. When the user asks a question in the chatbot, the query is also passed through the same embedder to generate a vector. This allows the system to perform a semantic search, not a simple SQL-style search. Instead of matching exact keywords, semantic search finds documents that are conceptually similar.
+
+Once the relevant documents are found, they are sent to the LLM along with the user’s question. The LLM uses both pieces of information—the retrieved documents and the original query—to generate a final response. This combined context becomes the prompt for the LLM. The response is then returned to the user. So the workflow is: user submits a query → query is converted into a vector → similar documents are retrieved → both query and documents are processed by the LLM → final answer is generated.
+
+This is the complete process behind Retriever-Augmented Generation. With this understanding, you can confidently explain RAG to anyone and describe exactly why it is so important for organizations today.
+
+# **H) What is Langchian ?**
+
+Today, we are going to understand a key concept in the world of generative AI called LangChain. To make it easier to grasp, think of LangChain like Lego. Most of us or our children have played with Lego. Lego consists of small bricks and comes with predefined instructions to build specific models. You can follow these instructions to build the model exactly as shown, or you can use the same bricks to create something entirely original based on your imagination. Similarly, LangChain allows you to use pre-built modules or models for common tasks or combine them in new ways to create complex language applications tailored to specific needs.
+
+Just as Lego bricks are assembled following structured guides to create a final model, LangChain integrates various data sources with AI language models. For example, you might want to combine multiple LLMs such as LLaMA and ChatGPT. LangChain makes this integration possible. Essentially, LangChain is a technology framework that enables developers to build applications with large language models efficiently. You don’t need to start from scratch; instead, you can use pre-built modules, customize them, and assemble them as per your requirements.
+
+A practical example of LangChain in action is the implementation of RAG (Retriever-Augmented Generation). Suppose you have an external data source, which is converted into embeddings and stored in a vector database. When a user query comes in, the same vector database is used to retrieve relevant information. This retrieved data acts as a prompt that is then sent to the language model. So, by using LangChain, you can easily implement RAG workflows. LangChain is modular and flexible, allowing developers to mix and match modules, which simplifies incorporating sophisticated AI functionality into applications.
+
+LangChain is also very developer-friendly. Without it, integrating LLMs into software applications could become highly complex. The framework reduces implementation difficulty and enables developers to focus on building functionality rather than managing the underlying complexity of AI-driven conversational agents.
+
+Here’s a simple example to make it concrete: imagine a user asks, “What is the weather like in Chandigarh today?” through an app integrated with LangChain. ChatGPT alone cannot provide current weather information since its knowledge is limited to its training data (e.g., GPT-4 is trained up to December 2023). LangChain processes the query, understands that it requires current weather data, and retrieves the information from the appropriate external source or API. Suppose the weather database returns sunny, 40°C.
+
+Next, the language model comes into play. LangChain sends the retrieved data as a prompt to the LLM, which generates a natural, user-friendly response, such as: “The weather in Chandigarh today is sunny with a temperature of 40°C.” This response is then delivered to the user through the app. In this way, LangChain orchestrates the workflow: the query is processed, data is retrieved from the appropriate source, and the language model generates the response in a clear format.
+
+In summary, LangChain is a technology framework designed to integrate large language models into applications effectively. It allows developers to use pre-built modules, customize workflows, combine multiple LLMs, and retrieve and generate responses using external or private data sources. LangChain makes it easier to implement complex AI-driven applications, such as RAG-based systems, while remaining flexible, modular, and developer-friendly.
+
+# **I) Role of Langchain in RAG**
+
+By now, we have understood the concept of RAG (Retriever-Augmented Generation) and have also touched upon LangChain. At this point, it’s common to feel a bit confused between RAG and LangChain. To clarify, LangChain is essentially the heart and soul for achieving a real RAG system. LangChain is tightly integrated into both the retrieval and generation components of RAG, making the end-to-end workflow possible.
+
+The workflow begins with document retrieval and ingestion. First, you ingest your data into the system. This could be enterprise knowledge bases, sets of PDFs, or other document formats. LangChain facilitates this entire process, acting as the framework that enables retrieval from the enterprise knowledge base. Without LangChain, orchestrating this process would be highly complex.
+
+Once the documents are retrieved, the next step is processing and embeddings. Each sentence, paragraph, or word in the documents is converted into vector embeddings, which are arrays of numbers representing the features of the text. LangChain plays a key role in ensuring that this embedding process is integrated seamlessly into the workflow.
+
+After creating embeddings, these vectors need to be stored for efficient querying. This is where a vector database comes in. LangChain helps manage the storage of document embeddings in the vector database, which is then used to perform similarity searches. When a user submits a query, the query itself is converted into embeddings, which are then compared with the document embeddings to find the most relevant information.
+
+Once the similarity search identifies the relevant documents, the next step is query enhancement and context preparation. LangChain helps combine the original user query with the retrieved information to create an enriched context. This enriched context becomes the prompt that is sent to the language model (LM). By doing this, the LM has all the necessary context to generate accurate and informed responses.
+
+Finally, in the generation phase, the LM creates the response based on the prepared prompt. LangChain manages the interaction with the LM, ensuring that the input is correctly formatted and that the generation process is executed effectively. Essentially, LangChain provides an end-to-end framework that integrates every component of the RAG system—from the initial user query, through retrieval, embedding, similarity search, and context preparation, to the final response generation by the LM.
+
+With this explanation, it becomes clear that LangChain is critical to a RAG system, serving as the backbone that enables seamless integration and smooth operation across all stages of the workflow.
+
+# **J) Prompt Engineering & Fine Tuning**
+
+After getting a good understanding of what a Large Language Model (LM) is, it’s time to understand two more important concepts: prompt engineering and fine tuning. These are crucial from the perspective of generative AI or LMs, so having a clear understanding of them is very important.
+
+Let’s start with prompt engineering. First of all, remember that a prompt is essentially an input. Prompt engineering is the practice of crafting or creating inputs (prompts) for a generative AI model to elicit the best possible output. Prompts are the inputs to a model, and in generative AI, the principle is simple: if your input is poor, your output will be poor; if your input is good, your output will be good. With prompt engineering, you are essentially experimenting with different ways to ask or phrase a question.
+
+For example, you could ask, “What is an antibiotic?” or “Give me some details about antibiotics,” or “Can you summarize antibiotics?” Another example could be giving a statement like, “Here are some lines about antibiotics, is my understanding correct?” These are different ways of prompting the model, and by experimenting with these different prompts and observing the outputs, the model’s performance and understanding can improve over time.
+
+Prompt engineering is a practice that involves using specific keywords, structured sentences, and including examples to guide the AI. Ultimately, the goal is to maximize the AI’s understanding of the task and generate more accurate, relevant, and creative responses. The prompt should be designed in a way that the AI can understand and process it effectively to produce meaningful human-like text. This also requires understanding context; for example, the word “bank” could refer to a riverbank or a financial bank, and the AI must interpret it correctly based on context.
+
+Prompt engineering can be used by both novices and experts. A novice may use trial and error: they provide a prompt, observe the output, refine the prompt, and try again until they get satisfactory results. Experts, on the other hand, know how to craft prompts in a highly precise way to get accurate and creative outputs, often using sophisticated methods informed by a deep understanding of the model.
+
+The second concept is fine tuning. In simple terms, fine tuning is the process of optimizing the performance of a pre-trained AI model to better suit specific tasks or datasets. This involves training the AI on a particular dataset to refine its responses so that they are more aligned with the characteristics of that data. In this process, both the quality and quantity of data are extremely important. Pre-trained models like large language models are trained on massive datasets from books, websites, Wikipedia, and more, which gives them broad knowledge.
+
+Fine tuning requires more computational resources and technical knowledge than prompt engineering because it involves training with large datasets and making adjustments to the model’s parameters. It enables the creation of custom AI models that can perform better on specialized tasks. Fine tuning is not a one-time activity; it’s a continuous process where models are periodically updated as they are exposed to new data.
+
+One challenge with fine tuning is overfitting. Overfitting occurs when a model performs extremely well on the training data but fails to generalize to new, unseen data. Therefore, careful monitoring and adjustments are needed to ensure that the model performs well not just on the trained dataset but also on real-world inputs.
+
+Prompt engineering and fine tuning often go hand in hand. Fine tuning provides a strong baseline performance for the model, optimizing it for the overall task, while prompt engineering optimizes individual interactions, guiding the model to produce the most accurate and creative outputs for specific prompts. Both techniques are crucial for enhancing the performance of generative AI models in various applications and are used together to ensure the model is both well-trained and adaptable to diverse user inputs.
+
+In summary, prompt engineering is about crafting effective inputs to get the best output, while fine tuning is about optimizing the model itself for specific tasks. Both require attention to context, data quality, and experimentation, and when used together, they significantly enhance the capabilities and performance of generative AI models.
+
+# **V) AI Infrastructure**
+
+# **A) What is a GPU ?**
+
+In this video, we will discuss the $1 million question. Why the $1 million question? Just look at how the world is going crazy about AI. The backbone of AI, in terms of infrastructure, is the GPU. Just look at Nvidia shares—they are skyrocketing. This has everyone curious to understand what a GPU is. Most people know about a CPU, which has been used for ages, but why have GPUs suddenly become so important in our lives?
+
+A GPU stands for Graphics Processing Unit. You may wonder why we are talking about a graphics unit in the context of AI. GPUs were originally designed to accelerate graphics rendering, mainly for gaming, which is why some people even call it a Gaming Processing Unit. They were designed to render graphics in applications such as 3D games and animations. The key feature of a GPU is its highly parallel structure. The biggest difference between a CPU and GPU is that CPUs perform computations serially, while GPUs perform computations in parallel. GPUs have a parallel processing architecture, allowing them to process many computations simultaneously. Tasks that take longer on a CPU due to serial processing can be completed much faster on a GPU.
+
+Rendering, also known as image synthesis, is the process of generating a photorealistic or non-photorealistic image from a 2D or 3D model using a computer program. Originally, GPUs were used for this purpose in video games and 3D animation, long before AI became a consideration. However, scientists later realized that the parallel processing power of GPUs could be leveraged in machine learning and AI. Neural networks, for instance, involve multiple interconnected nodes, and GPUs, with their thousands of cores, can handle multiple operations concurrently. This parallelism significantly accelerates the training of complex neural networks.
+
+Moreover, GPUs are more energy-efficient than CPUs for parallel processing tasks. While CPUs can also run multiple cores, their architecture is not as efficient as GPUs for breaking down tasks into multiple subtasks to be executed simultaneously. This results in a better performance-per-watt ratio with GPUs.
+
+There are two main types of GPUs: integrated and dedicated. Integrated GPUs are built on the same chip as the CPU, sharing the same memory and resources. Dedicated GPUs, on the other hand, are separate cards with their own memory and processing power, offering superior performance. GPUs are essential for powering virtual reality and augmented reality applications, where speed and performance are critical for an immersive experience. Wherever there is a large amount of data or graphics to process, GPUs are indispensable.
+
+The technology behind GPUs is rapidly evolving, with constant innovations leading to faster, more efficient, and more powerful GPUs. Major companies in the GPU space include Nvidia, AMD, Intel, and ARM. Currently, Nvidia is the market leader, with AMD catching up. There is significant investment in the GPU industry due to its critical role in AI and graphics-intensive applications.
+
+To summarize, CPUs (Central Processing Units) typically have a few cores—ranging from 8 to 100—and are optimized for low-latency, serial processing tasks. GPUs, in contrast, have hundreds or thousands of cores, optimized for high-throughput, parallel processing. CPUs perform well for tasks requiring sequential computation, while GPUs excel at parallel processing tasks such as graphics rendering, 3D games, machine learning, and deep learning. A CPU processes tasks one at a time, whereas a GPU breaks tasks into smaller subtasks and processes them simultaneously, making it ideal for operations that require high concurrency.
+
+Traditional programming was mostly written for CPUs, so additional software and programming are needed to utilize GPUs efficiently for parallel execution. This is an important consideration for developers who want to leverage GPU power. With this, you now have a clear understanding of what a GPU is. You can also look up images of Nvidia processors to see how GPUs look in the real world. In the next video, a demo will clearly illustrate the difference between CPU and GPU.
+
+# **B) Demo: CPU Vs GPU**
+
+Hello and welcome. I’d like to share a video that was an eye-opener for me. When I was investigating the difference between a CPU and a GPU, I realized that while most of us are familiar with what a CPU is, many people might not be aware of what a GPU does. In the previous lecture, we discussed the theoretical differences between a CPU and a GPU, but now I want to show you a demo that illustrates it visually.
+
+The video I’m sharing is from Nvidia and was uploaded almost ten years ago when they introduced GPUs to the world. In this demo, the presenter paints a picture of how a CPU operates as a series of discrete actions performed sequentially, one after the other. Then, he compares it to how a GPU works with thousands of cores running in parallel.
+
+In the demonstration, when the trigger is hit, 2,100 gallons of air go through accumulators, out through valves, and into 1,100 tubes. Each tube contains a paintball, which flies across seven feet of space and reaches its target in just 80 milliseconds. The aim is to paint the Mona Lisa. While a CPU would handle tasks sequentially, this setup represents a GPU’s parallel processing, where thousands of operations occur simultaneously to achieve a fast, coordinated result.
+
+This demo is a clear and engaging way to visualize the power of GPUs compared to CPUs. It highlights how GPUs, with thousands of cores running in parallel, can perform complex tasks much faster than CPUs, which handle tasks sequentially. Thanks for watching, and I hope you enjoyed the demonstration as much as I did.
+
+# **C) What is RDMA Cluster Network**
+
+After having a good look at High-Performance Computing (HPC), it is time to explore RDMA cluster networks. You might recall that HPC involves using multiple computers in a cluster to perform tasks faster than a single computer could. By adding thousands of computers to a cluster, you can complete more work in less time. In HPC, these computers are interconnected, often with the fastest CPUs and GPUs, but a slow network can become a major bottleneck. To address this, we have RDMA cluster networks.
+
+RDMA stands for Remote Direct Memory Access. Breaking it down: “Remote” means accessing memory on a different computer rather than locally, and “Direct Memory Access” means the data transfer happens directly between memories without involving the CPU or operating system. RDMA cluster networks are specialized network configurations designed specifically for HPC to ensure high-speed communication between cluster nodes.
+
+To understand the benefit of RDMA, consider how two computers normally communicate. Data from one application on a computer passes through several layers—such as the OS, kernel, and network interface card (NIC)—travels over the network, and then passes up the layers of the receiving computer to reach memory. This process introduces latency and slows down performance. RDMA bypasses these layers, allowing direct memory-to-memory data transfer between computers. This reduces CPU overhead, lowers latency, and increases throughput, which is crucial for tasks requiring rapid data processing, such as AI and big data analytics.
+
+RDMA networks are known for their extreme low latency and high throughput, making them ideal for HPC applications. They can be implemented over various network protocols, including InfiniBand, which has been used in Oracle Exadata systems for years. More recently, RDMA over Converged Ethernet (RoCE or Rocky) enables RDMA over Ethernet, and iWARP provides RDMA over wide area networks. These implementations make RDMA highly versatile and adaptable to different environments.
+
+Another significant advantage of RDMA networks is scalability. HPC clusters often grow over time, and RDMA supports seamless expansion, making it suitable for research and enterprise settings where computing demands can increase. RDMA is also beneficial in clustered databases and storage systems, enabling rapid and efficient data transfer between nodes, which is essential for cloud computing, parallel computing, scientific simulations, real-time analytics, and other HPC applications.
+
+RDMA is also energy-efficient. By bypassing the CPU and reducing processing overhead, it optimizes data transfer and consumes less energy than traditional networks. However, there are cost considerations. RDMA cluster networks require specialized hardware and maintenance, making them more expensive than traditional networking solutions. While the performance benefits are significant, implementing RDMA requires investment in infrastructure.
+
+In summary, high-performance computing requires a fast network to prevent bottlenecks, and RDMA cluster networks provide the solution. RDMA allows one computer’s memory to communicate directly with another’s, bypassing OS layers, CPUs, and NICs. This direct memory access improves speed, efficiency, and scalability, making RDMA essential for modern HPC and cloud computing applications.
 

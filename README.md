@@ -212,19 +212,132 @@ In supervised learning, there are two main types: classification, which sorts it
 
 # **F) What is Classification in SML ?**
 
+So there are two types of machine learning, or supervised machine learning per se. One is classification and the other is regression. As I always say, it’s important to look at the root word. In classification, the root word is classify. You may ask, what does classify mean? It means to arrange a group of people or things into classes or categories. It’s as simple as that. Essentially, you have many things, and you are just grouping them.
+
+For example, consider I have a brinjal, a broccoli, a carrot, and some burgers. You want to categorize them. If you pass this through a classification model or machine learning model, it can classify that all the vegetables fall under the category “vegetables,” and the burgers fall under “groceries.” If a company wants to do analytics to see what customers are buying, and categorize how much is vegetables and how much is groceries, this is exactly what classification does.
+
+In terms of a formal definition, classification involves assigning category labels to new observations based on past observations and their labels. In supervised machine learning, we have labeled data. The aim of classification is to assign category labels, and these labels are known when you input your data. Classification can be binary, meaning two classes, like determining whether an email is spam or not (non-spam is also called ham). A lot of emails are fed into the classifier, and based on features or algorithm logic, it identifies which ones are spam and which ones are ham, sending them to the appropriate folder.
+
+Classification can also be multi-class, such as classifying types of fruits. There are multiple fruit categories, and the model identifies which category each fruit belongs to. Common algorithms used for classification include Decision Trees, Random Forests, Logistic Regression, Support Vector Machines, and Neural Networks. While you don’t need to fully understand each yet, it’s important to know their names.
+
+Feature selection is crucial in classification. Choosing the right features or inputs determines the effectiveness of the model. For example, in the healthcare sector, detecting prostate cancer requires feeding MRI images to the model. The feature design determines whether the image contains a lesion or not. A lesion indicates a damaged area or possible cancer. The machine, using these features, classifies whether the image falls under the prostate cancer category or another category. This is far more efficient than manually analyzing thousands of images. Selecting the right features is critical because if features are poorly chosen, the model might miss identifying a patient with cancer.
+
+As a supervised machine learning technique, classification requires labeled data. Each instance in the training data is tagged with the correct class. When test data is introduced, the model should predict the appropriate category based on what it has learned from training.
+
+Another important concept is overfitting and underfitting. Overfitting occurs when a machine learning model performs very accurately on training data but fails to generalize to new or test data. It is considered undesirable. Balancing model complexity to prevent overfitting and underfitting is essential. Testing helps adjust and tweak the model so that its performance on new data mirrors its performance on training data.
+
+Classification has many applications. Email spam detection is one example. Image recognition is another; for instance, analyzing MRI prostate images to detect cancer. It’s also used in medical diagnosis and sentiment analysis, and it can even assist in real-time decision-making. In banking, classification is used for fraud detection. For example, based on transaction features and patterns, a system can classify transactions as normal or potentially fraudulent.
+
+To summarize, supervised machine learning classification is straightforward. It involves classifying or adding category labels—essentially arranging a group of people or things into classes or categories. By understanding features and carefully training models, classification can be applied to various sectors effectively, from healthcare to banking to everyday analytics.
+
 # **G) What is Regression in SML ?**
+
+Hi folks. Welcome back. In the previous video, we discussed supervised machine learning classification. Now, we will talk about regression. You might ask, what is regression? Regression is a statistical technique that relates a dependent variable to an independent variable. You might also ask, what is a dependent variable and what is an independent variable? Let me explain with a very simple example.
+
+If we have an equation like 𝑦=2𝑥y=2x, something most of us learned in algebra, here 𝑥 x is the independent variable and 𝑦 ;𝑥 x. For example, if 𝑥 = 2 x=2, then 𝑦 = 4 y=4. 
+
+y dependent? Because its value changes as we change y=6. The independent variable is plotted on the x-axis, and the dependent variable is plotted on the y-axis, usually in 
+a scatter graph showing various data points. Regression analysis predicts a continuous output, which is the dependent variable. Essentially, we try to determine the value of 𝑦 y based on one or more predictors (independent variables). For instance, in house price prediction, the general assumption is that the larger the house, the higher the price. So if a house is 2500 square feet, its price would likely be in a high range. If your test data has a house of 1250 square feet, regression helps predict the dependent variable, i.e., the price, which might be around 220 (thousand or lakhs, depending on units). Keep in mind, this is just a prediction, not the actual price.
+
+There are two types of regression: linear regression and multiple regression. Linear regression is the simplest form and assumes a linear relationship between the input and output variables. For example, predicting house price based on its size is a linear regression problem. In linear regression, there is only one independent variable.
+
+In contrast, multiple regression involves two or more independent variables. For example, predicting a car's price could involve features such as age, mileage, brand, engine size, and more. By including multiple independent variables, we can make more accurate predictions.
+
+The line of regression is the line used to predict the value of 𝑦 y for a given 𝑥 x. This can be thought of as a model representation, like 𝑦=2𝑥 y=2x in a simple example, but regression algorithms can compute this line based on training data.
+
+Regression has many applications. In finance, it can be used for stock price prediction based on historical data. In medical diagnosis, it helps predict outcomes or measurements. In retail, regression can forecast sales based on historical trends and market behavior.
+
+As with classification, regression models can also suffer from overfitting and underfitting. Overfitting occurs when a model performs very well on training data but poorly on unseen data, such as predicting future stock prices. A complex model may fit historical data perfectly but fail to generalize to new data. Therefore, it is essential to tune the model so it performs well on both training and test data. Most machine learning algorithms require this balance.
+
+To clarify the difference between regression and classification: if you are predicting whether it will be hot or cold tomorrow, you are categorizing the outcome—this is classification. If you are predicting the exact temperature tomorrow, you are predicting a continuous output—this is regression. Regression analysis is all about predicting the value of a dependent variable based on one or more independent variables.
 
 # **H) What is Unsupervised Machine Learning ?**
 
+After gaining a solid understanding of supervised machine learning, it’s now time to explore unsupervised machine learning. In unsupervised learning, there are mainly two types: clustering and association.
+
+The golden rule to remember is that supervised machine learning works on labeled data. For example, if you feed a lot of pictures of cats and dogs, you label each picture as either a cat or a dog. This labeled data acts as the supervisor, guiding the machine learning model. In contrast, unsupervised machine learning deals with unlabeled data. Here, you feed the algorithm data without providing any output labels. For instance, you insert a lot of pictures, but you don’t tell the machine which ones are cats or dogs. This is the core of unsupervised learning.
+
+By definition, unsupervised learning involves analyzing and clustering unlabeled data sets. You might ask, what is clustering? Clustering is essentially grouping data. The algorithm groups similar data points together—forming clusters. For example, cluster one contains data points that are similar, and cluster two contains another type of data points. Clustering allows the discovery of hidden patterns in the data. The goal of unsupervised machine learning, like supervised learning, is to understand patterns and make predictions, but here it does so without guidance from labeled data.
+
+Clustering is the most common unsupervised learning technique. It groups data points into clusters where items in the same cluster are more similar to each other than to items in other clusters. For instance, if you feed different pictures into the algorithm, it might place all the cats in one cluster and all the dogs in another. This technique is widely used in market segmentation, where customers are grouped based on purchasing behavior. Companies can then target specific clusters with tailored marketing strategies.
+
+Another important unsupervised technique is association. Association identifies sets of items that frequently occur together. A perfect example is online learning platforms like Udemy. When you purchase an Oracle Cloud course, the platform may recommend three other courses frequently bought together by other users. This helps learners discover relevant courses and often comes with bundled discounts. Similarly, in retail, association rules help find products often bought together, optimizing store layouts or promoting cross-sales.
+
+Anomaly detection is another important aspect of unsupervised learning. It is used to identify unusual patterns, such as detecting hackers intruding into a network or spotting fraudulent transactions. By examining transaction patterns, the algorithm can flag behaviors that deviate significantly from the majority of data, enabling fraud detection in banking or cybersecurity applications.
+
+Unsupervised learning has broad applications, including bioinformatics, image recognition, speech recognition, and recommender systems. Platforms like Netflix and Spotify use unsupervised learning to group users with similar interests. For example, if a user frequently watches thriller movies or takes Oracle Cloud courses, the system recommends similar content without needing labeled data for each user.
+
+However, unsupervised learning comes with challenges. Compared to supervised learning, it is more difficult because there is no labeled data. One of the biggest challenges is determining the correct number of clusters in a dataset without predefined categories. While simple examples like cats and dogs are straightforward, real-world datasets often have many varieties, making it complex to identify clusters accurately. Data scientists must carefully tune their models to handle these complexities.
+
+In summary, unsupervised machine learning focuses on discovering patterns in unlabeled data. Its two main types are clustering, which groups similar data points, and association, which identifies items that frequently occur together. Despite the challenges, unsupervised learning is a powerful tool for understanding hidden patterns and making informed decisions.
+
 # **I) What is Re-inforcement Machine Learning**
+
+In the previous videos, we learned about supervised and unsupervised machine learning. Now, it’s time to explore the third type of machine learning, called reinforcement learning. As always, it helps to look at the root word. Reinforcement means to further strengthen or to give additional strength. In everyday language, we often hear about reinforcement in the context of the army—sending a reinforcement army to strengthen a deployed force. Similarly, in machine learning, reinforcement means strengthening a model or moving toward more accurate predictions. The ultimate goal is to achieve maximum accuracy, and this is achieved through a process of continuous feedback and improvement.
+
+The core concept of reinforcement learning involves an AI agent. The agent learns to make decisions by performing actions and receiving feedback. Feedback comes in the form of rewards and penalties. You can think of it like a student in a classroom. If the student does well, they receive a reward. If they make a mistake, they may face a penalty. Similarly, the AI agent performs actions, observes the results, and adjusts its strategy to maximize rewards and minimize penalties.
+
+In reinforcement learning, the agent interacts with its environment. At each time step, the agent receives the state of the environment, takes an action, and gets feedback in the form of a reward or penalty. For example, in a game of chess, the environment is the chessboard, the actions are the moves (like moving a king, queen, or knight), and the feedback is whether that move improves the agent’s position (reward) or worsens it (penalty). The agent is the heart of reinforcement learning, learning continuously from its interactions with the environment.
+
+The learning process involves selecting the best action given a state to maximize cumulative rewards over time. Two critical concepts are exploration and exploitation. Exploration refers to trying new actions to discover potential strategies, while exploitation means leveraging existing knowledge to make the best decision based on what the agent already knows. Balancing exploration and exploitation is a key challenge, as relying too much on either can reduce the model’s effectiveness.
+
+Reinforcement learning has several important applications. Game playing, such as chess or Go, is a classic example. Robotics and autonomous vehicles also rely heavily on reinforcement learning. For instance, companies like Waymo constantly improve their autonomous vehicle algorithms by learning from real-world driving experiences. Accidents or mistakes act as penalties, prompting the model to improve and adapt.
+
+However, reinforcement learning comes with challenges. It requires large amounts of high-quality data, balancing exploration and exploitation, and handling environments with high variability or uncertainty. In autonomous driving, for example, unexpected events—such as a child running onto the road or a cyclist falling—create an unpredictable environment. The AI agent must learn to adapt safely and efficiently in such scenarios.
+
+In summary, reinforcement learning focuses on strengthening models through trial, feedback, and improvement. The agent interacts with the environment, takes actions, and receives feedback in the form of rewards or penalties to optimize performance over time. It is a powerful approach for complex decision-making tasks where continuous learning and adaptation are critical.
 
 # **J) What is a Jupyter Notebook**
 
+This is a very important concept: Jupyter Notebooks. I want to give you a clear understanding of what a Jupyter Notebook is, because if you’re working in machine learning, data science, or artificial intelligence, a solid grasp of Jupyter Notebooks is essential.
+
+A Jupyter Notebook provides an interactive environment for writing and running code in various programming languages, most notably Python. The beauty of a Jupyter Notebook is that you can write your code and see the output in the same interface.
+
+If you look at a notebook, you’ll notice it is organized into cells. Each cell can contain code, and you can execute it independently. For example, you can run one code cell, see its output, and then move on to the next cell. This live code execution makes Jupyter Notebooks very convenient for experimenting and iterating on your code.
+
+Although Jupyter supports around 40 programming languages (including R, Julia, and Scala), Python is the primary language used for data science and machine learning.
+
+Another advantage of Jupyter Notebooks is the ability to include rich text elements. You can add markdown text, equations, images, and links, which allows you to document your code comprehensively alongside its explanations. This makes notebooks highly readable and useful for sharing and teaching.
+
+Jupyter Notebooks also have excellent integration with data visualization libraries. For instance, Python’s matplotlib allows you to create static, animated, and interactive visualizations. Other libraries like Plotly and Bokeh can be used for interactive graphs. When you run a code cell, the output—whether text, table, or graph—appears directly below it, making the experience highly interactive.
+
+You can also share your notebooks easily. They can be exported to different formats, such as HTML, PDF, or even slides, which makes them ideal for presentations and collaboration. This is one reason Jupyter Notebooks are widely popular in both academia and research. They are used extensively in universities and research projects for teaching programming, computational thinking, and data analysis.
+
+Furthermore, Jupyter Notebooks integrate well with several data science tools, such as Anaconda. This integration allows you to perform tasks like data cleaning, statistical modeling, machine learning, and more, all within a unified environment. Even Oracle Machine Learning tools support Jupyter Notebooks, enabling seamless use in enterprise environments.
+
+So, that’s why understanding Jupyter Notebooks is essential. In the next video, we’ll do a demo showing how to use Anaconda to run Jupyter Notebooks. From there, we’ll move into machine learning demos and start practical work.
+
 # **K) Demo: Install Anaconda**
+
+The time has finally come to learn something practically. Until now, we have been focusing a lot on the theoretical aspects of machine learning, but now it’s time to understand it in a practical manner. For this, it’s very important to have a good understanding of Anaconda. You might ask, what is Anaconda?
+
+Anaconda is an open-source distribution of Python and R, designed specifically for data science. Its main purpose is to simplify package management and deployment. The package versions in Anaconda are managed by a system called Conda, which analyzes your current environment before executing an installation. This ensures that existing frameworks or packages are not disrupted. The Anaconda distribution comes with over 250 packages pre-installed, making it highly convenient for data science, machine learning, and AI work. Therefore, anyone looking to work in these fields should definitely understand what Anaconda is and how it works.
+
+Getting started with Anaconda is simple. By going to Anaconda.com, you can select the free download option. Anaconda automatically detects your system and provides the correct installation file. There are installers available for Windows, Mac, and Linux. For Mac users, there are two options depending on the processor type, either Intel or M1/M2/M3. Anaconda is open-source, user-friendly, and trusted by many companies. Behind the scenes, it uses Conda to run all your code efficiently and manage the environment seamlessly.
+
+One important part of Anaconda is the Anaconda Navigator, which is a graphical interface that allows you to manage, integrate, and run applications, packages, and environments without needing to use the command line. It comes pre-built with several important packages used for data exploration, transformation, visualization, machine learning, and more. These packages make it easy to perform a wide variety of tasks in a single environment.
+
+Once Anaconda is installed, you can open the Anaconda Navigator, which allows you to launch applications such as Jupyter Notebooks. Jupyter Notebooks provide an interactive environment where you can write and run Python code. Each notebook consists of cells that can be executed independently. You write your code in a cell, run it, and the output appears directly below the cell. This live interaction makes it easier to experiment with code and immediately see results.
+
+The beauty of Jupyter Notebook is that it also supports the integration of various Python libraries, enabling the creation of graphs, visualizations, and interactive outputs within the same environment. This makes it an essential tool for data science and machine learning tasks. By combining Anaconda and Jupyter Notebooks, you have a complete setup for writing, testing, and visualizing code in a highly interactive way.
+
+In this video, we provided an overview of how to use Python in Jupyter Notebooks through Anaconda. In the next session, we will work with a real dataset, specifically the Iris dataset, to see machine learning in action. This will help bridge the gap between theory and practical application in a hands-on way.
 
 # **L) Demo: Understanding the IRIS Dataset**
 
+Now I’d like to introduce you to the Iris dataset. You might recall from one of our previous lectures on supervised machine learning, where we discussed labeled datasets. The Iris dataset is a classic example of a labeled dataset, and it has a long history in the field of machine learning. In fact, it was first used in R.A. Fisher’s 1936 paper, which shows just how foundational it is. The dataset is also available on the UCI Machine Learning Repository.
+
+So what exactly is the Iris dataset? Essentially, it contains several features related to iris flowers. These features include sepal length in centimeters, sepal width, petal length, and petal width. The dataset also includes labels that indicate the species of the iris flower. The main species in the dataset are Iris setosa, Iris versicolor, and Iris virginica. There are 50 entries for each species, giving us a total of 150 rows. Because it is a labeled dataset, each row not only contains the features but also the corresponding species category, which makes it ideal for supervised learning tasks.
+
+Our first step is to understand the dataset before we start building models. You can easily download the Iris dataset from the internet, or I will also provide it in the course resources as a CSV file named iris.csv. Once you have the file, you can begin exploring it using Python in a Jupyter Notebook. To start, we typically import the pandas library and read the CSV file into a variable. This allows us to view and manipulate the data easily. For example, using the head function, you can quickly see the top five rows of the dataset, which show the sepal length, sepal width, petal length, petal width, and the species of each flower. This is essentially your training data, which will be used to train your machine learning model.
+
+Next, you might want to understand the overall structure of the dataset. By checking the shape of the data, you can see that there are 150 rows and six columns. This gives you a sense of the size and the number of features in the dataset. Sometimes, you may only be interested in specific columns. For instance, if you want to display just the ID and species columns for the first ten records, you can filter the dataset accordingly. This allows you to focus on only the relevant information while exploring the dataset.
+
+This overview provides a solid understanding of the Iris dataset and sets the stage for practical machine learning. In the next video, we will take the Iris dataset and create our own machine learning model. We will train the model using this dataset and then make predictions to see how it performs. Things are about to get interesting, so keep watching.
+
 # **M) Demo: Creating & Training your ML Model**
+
+
 
 # **III) Deep Learning Foundations (For Absolute Beginners- Optional)**
 

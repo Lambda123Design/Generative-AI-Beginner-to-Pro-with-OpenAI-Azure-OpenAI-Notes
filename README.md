@@ -84,6 +84,77 @@
 
 **C) What is RDMA Cluster Network**
 
+**VI) OpenAI / ChatGPT / API**
+
+**A) What is OpenAI ?**
+
+**B) What is ChatGPT ?**
+
+**C) Demo on chatgpt**
+
+**D) Time to reach 100M users**
+
+**E) Get an understanding of Various OpenAI Models**
+
+**F) GPT-3 vs GPT-4**
+
+**G) New: What is GPT-4o ?**
+
+**H) New: Demo: GPT-4 Vs GPT-4o**
+
+**I) New: What is GPT-4o Mini?**
+
+**J) What are tokens ?**
+
+**K) Pricing Model for ChatGPT**
+
+**L) Demo: How to make API Calls with OPENAI APIs**
+
+**M) Demo: Make a simple API Call**
+
+**N) Demo: How to create Embeddings ?**
+
+**O) Demo: Image generation using DALL·E in the API**
+
+**P) Demo: Convert Speech to Text**
+
+**Q) New: What is OpenAI O1 Model ?**
+
+**R) Demo: Compare GPT-4o vs OpenAI O1**
+
+**VII) Azure OpenAI Foundations**
+
+**A) Azure OpenAI - Intro**
+
+**B) What is Azure OpenAI**
+
+**C) History behind Azure OpenAI**
+
+**D) Models available with Azure OpenAI(Regions)**
+
+**E) Limits & Quotas - Important Consideration**
+
+**F) How Pricing Works in Azure OpenAI**
+
+**G) Demo: Setup Azure OpenAI Service**
+
+**H) What is Azure Open AI Studio ?**
+
+**I) Demo: Azure OpenAI Studio Walkthrough**
+
+**J) Chat Playground - Demo: Create a Deployment of Chats Playground**
+
+**K) Understand the Chat Playground**
+
+**L) Demo: Deploy a Webapp from the Playground**
+
+**M) DALL-E PlayGround - Demo on Generating Images**
+
+**N) What is Completions Playground ?**
+
+**O) Demo: Completions Playground**
+
+
 
 
 
@@ -857,3 +928,730 @@ RDMA is also energy-efficient. By bypassing the CPU and reducing processing over
 
 In summary, high-performance computing requires a fast network to prevent bottlenecks, and RDMA cluster networks provide the solution. RDMA allows one computer’s memory to communicate directly with another’s, bypassing OS layers, CPUs, and NICs. This direct memory access improves speed, efficiency, and scalability, making RDMA essential for modern HPC and cloud computing applications.
 
+# **VI) OpenAI / ChatGPT / API**
+
+# **A) What is OpenAI ?**
+
+Hello and welcome. As we are learning about Generative AI, or Gen AI, it’s not possible to continue without talking about OpenAI. I consider OpenAI to be a true game changer in the field of generative AI. Now, you may ask: What exactly is OpenAI? You might have heard terms like OpenAI, ChatGPT, and others. This is what I’m going to demystify for you. OpenAI is fundamentally an AI research lab. It started as a research organization with a key mission: to develop and promote friendly AI that benefits humanity as a whole. Their intention was to create intelligent computers and AI systems that help humans. In the beginning, they were not focused on making money or commercializing their research; they simply wanted to help humanity by advancing AI technology.
+
+OpenAI was founded in 2015 by several well-known names, including Elon Musk, who many of you know as the owner of Tesla and Twitter/X; Sam Altman, Greg Brockman, Ilya Sutskever, and Wojciech Zaremba, among others. Later, in 2022, OpenAI released what would become one of the most revolutionary AI systems ever created: ChatGPT. For now, just understand that OpenAI is the company, and ChatGPT is one of its most famous products. When ChatGPT was released in November 2022, Elon Musk became irritated with Sam Altman and the direction the company was taking. Musk publicly stated that the chatbot had accelerated a dangerous race to develop powerful AI systems. He felt that the direction was shifting toward replacing humans, which he did not support.
+
+Musk also disagreed with the fact that OpenAI originally positioned itself as a nonprofit organization promising open access to AI research, but later created a for-profit entity and raised billions of dollars — especially from Microsoft. He questioned how a nonprofit he co-founded transformed into a commercial model backed by massive funding. Because of all these disagreements, Musk eventually left the organization.
+
+Despite these conflicts, OpenAI has achieved remarkable feats. It has developed some of the most advanced AI models ever created, including the GPT (Generative Pre-trained Transformer) series — GPT-1, GPT-2, GPT-3, GPT-4, and potentially GPT-5 depending on when you are watching this. Another key aspect of OpenAI’s work is its focus on ethics and safety. They put significant effort into ensuring that AI is used ethically and securely, reducing risks associated with highly capable AI systems. They also started with a philosophy of open collaboration — sharing research and findings openly. However, this openness also created risks, because advanced AI models could be misused. This forced OpenAI to introduce controlled release strategies to ensure safety.
+
+As the organization grew, it realized that being purely open and nonprofit was not sustainable. A company needs funding to operate, hire talent, and build large-scale infrastructure. This led to the creation of commercial products and a very smart business model built around AI APIs. OpenAI charges for the input tokens (the prompt you give, such as “write a story”) and the output tokens (the AI’s response). This token-based billing applies to API usage for models like GPT-3 and GPT-4 for tasks such as conversation, summarization, and translation.
+
+One of the biggest turning points for OpenAI was its partnership with Microsoft, which invested $13 billion into the company. Today, in Microsoft Azure, you can find Azure OpenAI Service, which allows enterprises to use OpenAI models in a secure, scalable way. This partnership has been extremely powerful and will likely continue for years. OpenAI also has other partnerships, but Microsoft remains its biggest and most significant collaborator.
+
+With this, you now have a strong end-to-end understanding of what OpenAI is, how it started, the challenges it faced, how its mission evolved over time, and how it became one of the most influential forces in modern AI.
+
+# **B) What is ChatGPT ?**
+
+So I believe now you have a good understanding of what OpenAI is as a company. You understood its origins, its mission, and its evolution. Then we looked at GPT, which forms the backbone of ChatGPT. We explored what GPT means—Generative Pre-trained Transformer—and we also took a deep dive into how it works. Now the natural question is: What is ChatGPT? As the name suggests, “ChatGPT” can be broken down into two parts: Chat and GPT. GPT, as you already know, refers to the underlying generative transformer technology, and “Chat” indicates its interactive nature. But it’s not just a typical chatbot; it represents a highly advanced form of conversational AI.
+
+ChatGPT is built on top of GPT technology. In the previous explanation, you learned extensively about GPT, and now you can connect that understanding here. GPT is an AI model designed specifically to generate text, not to predict numerical outputs like predictive AI systems. It belongs to the field of generative AI because it creates content on the fly—whether you're asking it to write a story, a poem, or a piece of code. It produces new text dynamically based on your prompt.
+
+This capability comes from the fact that ChatGPT has been trained on a large and diverse corpus of internet text. When the model was being created, OpenAI fed it a huge amount of data—including news articles, blogs, books, encyclopedia content like Wikipedia, and countless other sources. Because of this broad training data, the model is able not only to generate text but also to understand the context of what is being asked. This is one of the biggest differences between generative models and traditional predictive models. For example, it can differentiate between “money in the bank” and “bank of the river” based purely on context. It can answer questions, write essays, compose poetry, or even generate complete code.
+
+ChatGPT functions through a conversational interface designed to simulate human-like dialogue. To use it, you simply visit chat.openai.com, choose the model (for example GPT-3.5 or GPT-4), and type your question. It responds immediately with a context-aware answer. The interface is entirely based on natural language processing, which allows the model to interpret your input as a human would.
+
+Now, ChatGPT does have learning capabilities, but not in the way many people assume. It does not learn from individual user interactions. It won’t store personal conversations or improve itself based on your specific inputs. Only OpenAI engineers can update or retrain the model. So even if someone asks irrelevant or harmful questions, ChatGPT will not adopt or learn from those interactions. Its improvement comes strictly from controlled training by OpenAI.
+
+ChatGPT can be used in many real-world applications. Since it's an advanced conversational system, it can power customer service chatbots, automated support assistants, tutoring systems for educational topics, or even specialized domain-focused assistants trained on specific content. It can also support content creation, whether that means generating text, summarizing information, or creating images when connected with image-generation models.
+
+OpenAI has implemented strong safeguards and guardrails to prevent ChatGPT from generating harmful or inappropriate content. They understand that even children might use ChatGPT, so if someone attempts to ask for adult, abusive, or unsafe content, the model will refuse and redirect the user. Safety and ethics are a core part of how ChatGPT was designed.
+
+A major advantage for developers is that ChatGPT or GPT models can be integrated into custom applications using APIs. For example, you can embed GPT capabilities into CRM systems, ERP tools, mobile apps, or enterprise software to enhance them with intelligent, conversational features. This allows organizations to tailor ChatGPT-based functionality to their specific business needs.
+
+ChatGPT continues to evolve with ongoing research and development. New models such as GPT-4 have already appeared, and GPT-5 is under development and expected to be released soon. OpenAI’s partnership with Microsoft—which involved a massive $13 billion investment—means both companies are jointly advancing this technology. As research continues, more powerful, safer, and more capable models will be released in the coming years.
+
+The goal here was to give you a solid, complete understanding of what ChatGPT is and how it works.
+
+# **C) Demo on chatgpt**
+
+Now the time has come to actually put generative AI—specifically ChatGPT—to the test. The process is very simple. You begin by logging in to chat.openai.com. Once you reach the login page, you’ll see two main options: you can either sign up if you are a new user or log in if you already have an account. To sign up, you simply provide a username, password, and email ID. Alternatively, you can make things easier by signing in using your Google, Microsoft, or Apple credentials. For this demo, to keep everything straightforward, I’ll log in using my Google account. If you’re doing this for the first time, Google will prompt you for your Gmail credentials, and once authenticated, you’ll be taken into the ChatGPT interface.
+
+Inside ChatGPT, most users will initially see GPT-3.5, which is the free version. It handles everyday tasks quite well. Alongside it, there is GPT-4, which includes additional features like browsing and more advanced analysis, though it comes with usage limits and is part of the ChatGPT Plus subscription. For this demonstration, I will choose GPT-3.5 and begin with a simple question. I ask: “Who is the Prime Minister of India? Give me the bullet points on his accomplishments.” Immediately, ChatGPT begins generating the response. Notice how fast it works—it is not browsing the internet but generating the answer based on its trained knowledge. Because GPT-3.5 was trained up to 2022, it responds by saying: “As of my last update in January 2022…” and then provides the answer. It identifies Narendra Modi as the Prime Minister and lists accomplishments such as Digital India, Jan Dhan Yojana, foreign policy initiatives, and more. The answer is quick and well-structured.
+
+Next, I try something different. I request: “Write me a 50-word story on the topic ‘My Best Friend.’” And instantly, ChatGPT creates a perfectly formed 50-word story. To push it further, I ask: “Write me a poem for my wife, whom I met 20 years ago and who loves cooking.” Here, the prompt provides context—how long ago I met her and what she enjoys. The model then takes these cues and generates a beautiful, personalized poem. That’s the power of generative AI: it doesn’t just answer; it creates.
+
+I can go even further and ask it to generate code. For example, I type: “Write me a Python code to print the Fibonacci series.” The Fibonacci sequence is a piece of logic that may take time to write manually if you're not familiar with it. Yet ChatGPT produces the complete Python code within seconds. It can generate stories, poems, essays, structured information, and even functional code—all on demand.
+
+This is where we emphasize again: ChatGPT is not a predictive system in the traditional sense, and it is not like Google. Google searches the internet for relevant documents. ChatGPT does not. It consults its trained internal model and generates new content dynamically based on patterns learned during training. That is why it belongs to the category of generative AI. It produces fresh content, in real time, tailored to the prompt you give.
+
+So, with this demonstration, you now have a clear understanding of how ChatGPT works in real-time scenarios—from answering factual questions to creative writing, from generating poetry to writing code. Thanks for watching.
+
+# **D) Time to reach 100M users**
+
+This is going to be a very quick video. All I want to highlight here is why I call ChatGPT and OpenAI true game changers. And the simplest way to understand this is by looking at the sheer popularity of ChatGPT. On this slide, you can see a comparison of how long it took various major companies to reach 100 million users, and the numbers clearly speak for themselves.
+
+Let’s start with Google Translate. It took Google Translate around 78 months to reach 100 million users. Then we have Uber—something almost everyone uses for taxi rides—and Uber took about 70 months to hit the same milestone. Moving on, there is Telegram, a messaging app similar to WhatsApp, and Telegram reached 100 million users in around 60 months.
+
+Next is Spotify, which many people use for online music and streaming. Spotify took approximately 55 months. After that, we look at Pinterest, which reached the 100-million mark in about 40 months. Instagram, another extremely popular platform from Meta, achieved this milestone in roughly 30 months.
+
+Then we come to TikTok. TikTok, which you can think of as similar to YouTube Shorts in concept, grew incredibly fast and reached 100 million users in around nine months. And now comes the most surprising part—the reason I call ChatGPT a breakthrough unlike anything before.
+
+As soon as ChatGPT was released, it took only two months—just two—to reach 100 million users. This is an unprecedented rate of adoption. And the growth hasn’t slowed down; it is continuing at a rapid pace, setting new records in the world of technology.
+
+So, I believe this gives you a clear understanding of why I keep saying that ChatGPT and OpenAI are absolute game changers in the field of generative AI.
+
+# **E) Get an understanding of Various OpenAI Models**
+
+So if you ask me today what the heart and soul of OpenAI is, I would say it very confidently:
+the heart and soul of OpenAI is its models — the kind of powerful models they have introduced to the world.
+
+All these models are built with a specific use case in mind, and each one is designed with different capabilities. OpenAI clearly states that their ecosystem is powered by a diverse set of models, each having its own strengths and its own price point.
+That means every model has a particular purpose, a particular capability, and also a particular way in which you are billed when you use it.
+
+Another major advantage is that you’re not restricted to only pre-trained models.
+OpenAI also gives you the ability to customize models, and the process used for customization is what we call fine-tuning.
+We already discussed what fine-tuning means in one of the earlier videos, but the important point here is: if you want a model to work for a very specific use case, fine-tuning is the way forward.
+
+Now, let’s talk about some of the most popular models that OpenAI provides today.
+The most recent flagship model is GPT-4 Turbo.
+They first launched GPT-4, and later, they released GPT-4 Turbo as an advanced, improved version.
+
+If we click on GPT-4 Turbo, you will notice that it's a large multimodal model.
+“Multimodal” means it can accept text as well as image inputs, and it always gives text as output.
+It is designed to solve difficult problems with higher accuracy.
+
+Another important thing you should always check is the training data cut-off.
+The more recent the training date, the more updated the model is.
+For example, GPT-4 Turbo has been trained till December 2023, which is extremely recent.
+If you scroll below, GPT-4 (the earlier version) was trained till September 2021.
+
+You will also observe that the number of tokens supported keeps increasing as new models come out.
+And don’t worry — we will discuss what tokens are in a separate video.
+
+Next, OpenAI introduced GPT-3.5, which, as we’ve seen in earlier videos, is the free model available for everyone.
+
+Then comes DALL·E.
+DALL·E is a model that can generate and edit images based on natural language prompts.
+It is incredibly powerful — you can simply describe an image in detail, for example:
+“A black dog with black eyes sitting beside a white cat with blue eyes on a beach,”
+and DALL·E will generate a picture exactly matching your description.
+
+Following that, we have TTS, which stands for Text-to-Speech.
+This model converts written text into natural-sounding audio.
+OpenAI provides different voice templates, and you can choose the one you like to generate speech from text.
+
+On the other hand, Whisper works in the opposite direction.
+Whisper is a model that converts audio into text.
+So TTS is text → audio, and Whisper is audio → text.
+
+Next is the concept of embeddings, something we already discussed.
+Embedding models convert text into numerical representations, and those numbers capture the meaning or features of the text.
+These embeddings are widely used in search, recommendations, clustering, and RAG systems.
+
+Then we come to moderation models.
+OpenAI takes ethics and safety very seriously.
+Moderation models ensure that the content you provide does not violate the policies.
+They can detect whether your prompt contains hate, violence, sexual content, self-harm topics, or anything that is restricted.
+This ensures the platform remains safe for everyone.
+
+After that, we have the older GPT Base models.
+These were trained to understand and generate natural language or even code, but they were not trained to follow instructions the way newer models are.
+Most people won’t be using these anymore, but they are still part of OpenAI’s history.
+
+Finally, there is the Deprecated section.
+Whenever a model is retired or shut down, OpenAI moves it into this category.
+You can scroll through the list to see which models have been discontinued along with their shutdown dates.
+
+So the intention of this video is simple:
+OpenAI is much more than just ChatGPT.
+It is an ecosystem of many specialized models — image models, speech models, text models, embeddings, moderation, and more.
+Knowing these gives you a complete picture of what OpenAI truly offers.
+
+With this, you now have a solid understanding of the different models available in OpenAI.
+
+# **F) GPT-3 vs GPT-4**
+
+Hi folks, welcome back. In this video, we’re going to take a detailed look at the differences between GPT-3 and GPT-4. Many people often ask me what the real difference is between these two versions, because OpenAI came up with GPT and then released multiple versions of it, which we discussed in the previous lecture. So first of all, GPT-3 and GPT-4 are both iterations of OpenAI’s Generative Pre-trained Transformer—GPT—which we know is the architecture designed by OpenAI. Even though both are versions of the same technology, there are several key differences. Some of those differences are visually represented in this figure, and thanks to V9 Digital for that illustration. You can see that GPT-3 accepts only text prompts, meaning you can only provide text as input, whereas GPT-4 accepts both text and image prompts, which is definitely an advancement. GPT-3 was already considered creative, but GPT-4 is even more creative, and you can clearly feel the difference when you ask it to write a poem, a story, or any creative content. GPT-3 tends to hallucinate a lot of facts and opinions—it generalizes quite heavily—while GPT-4 still hallucinates but much less. Another example is the bar exam. GPT-3 barely passed the bar exam, whereas GPT-4 actually aced it, performing extremely well. GPT-3 also needed a lot of steering and prompting from developers—you had to guide it a lot to get good results—but GPT-4 is more steerable by design and handles conversations and developer prompts more effectively.
+
+One of the biggest differences lies in model size and complexity. GPT-3 has around 175 billion parameters, making it one of the largest language models of its time. GPT-4 is even larger, with significantly more parameters, and the trend will continue with future versions like GPT-5 and GPT-6, where parameter counts will increase even further. Then comes performance and accuracy. GPT-3 sometimes struggles with complex reasoning tasks and can produce less accurate results because it was relatively early in its development. GPT-4, on the other hand, has matured and shows much better performance in understanding context. Remember, in transformer architecture, context is key—this is related to the concept of self-attention. GPT-4 delivers more accurate and contextually relevant outputs. When it comes to training data and knowledge, GPT-3 was trained on a vast corpus of text up to its cutoff date in 2020, using sources like Wikipedia and The Telegraph. GPT-4 was trained on many more sources, much larger datasets, and far more diverse information, which expands its knowledge range and improves contextual understanding. As we always discuss, context matters—for example, distinguishing between “bank” as in money vs. “bank” as in river. GPT-3 has a good understanding of context but tends to lose coherence during longer conversations or more complicated queries, whereas GPT-4 maintains context for longer and handles complex queries more effectively.
+
+Another major difference is modality. GPT-3 is purely text-based—you provide text, and it outputs text. GPT-4 is multimodal, meaning it can understand images in addition to text. In terms of applications, GPT-3 has been widely used across industries for content creation, letter writing, poem writing, storytelling, coding, customer service, corrections, and many other tasks. GPT-4 builds on all these applications but provides improved performance, making it more effective and versatile, especially for complex tasks. When we compare error rates and reliability, GPT-3—though advanced for its time—still had higher error rates for complex tasks. GPT-4 reduces those error rates significantly, which directly increases reliability. Lower error rates always lead to more dependable results. So overall, these are the key differences between GPT-3 and GPT-4. Thanks for watching.
+
+# **G) New: What is GPT-4o ?**
+
+As always, my aim is to keep you updated with all the modifications, improvements, and innovations happening in the world of OpenAI and Azure OpenAI. In line with that, I’ve prepared a new video focusing on two recently released models from OpenAI — GPT-4O and GPT-4 Mini. These models have created a lot of excitement, and it’s important to understand what they stand for and what makes them special.
+
+Let’s begin with GPT-4O.
+
+GPT-4O is essentially an advanced, optimized, and more powerful version of GPT-4. If you recall the evolution — we started from GPT-3.5, then GPT-3.5 Turbo, then the breakthrough GPT-4, and now we have GPT-4O. The immediate question that everyone asks is: What does the “O” stand for?
+
+The “O” stands for Omni.
+
+And what does Omni mean? Omni simply refers to “everywhere” or “everything.” For example, when we say “God is omnipresent,” we mean God is everywhere. That’s exactly the inspiration behind the Omni model — the goal was to enable the model to handle “everything” that previous versions like GPT-3 or GPT-4 could not handle.
+
+Released in May 2024, GPT-4O is quite recent. Its biggest strength lies in its multimodal capability. When we say “multimodal input,” it means the model can accept any combination of:
+
+Text
+
+Audio
+
+Images
+
+Video
+
+That’s the power of GPT-4O. You can give it input in any of these modes, and it can generate output as text, audio, or images. The only limitation as of now is that it does not generate video output, but both video and audio inputs are fully supported.
+
+Another major improvement in GPT-4O is its enhanced context length. Context, as you know, refers to the model’s ability to remember your previous prompts, understand the flow of the conversation, and interpret ambiguous words based on usage (like “bank” meaning money vs. river). GPT-4O can maintain context much longer and much more accurately than GPT-3 or GPT-3.5.
+
+A very interesting fact, which many people don’t know, is that GPT-4O is not larger than GPT-4 in terms of parameters. GPT-4 allegedly had around 175 billion parameters, while GPT-4O has around 12 billion parameters. Yet, GPT-4O performs better. How? Because “O” also stands for Optimized. It’s a heavily fine-tuned and highly efficient model that delivers better performance with fewer parameters. That’s the beauty of optimization.
+
+This optimization reflects directly in accuracy. GPT-4O provides more accurate and more relevant responses, significantly reducing incorrect or confusing outputs that older models sometimes produced. This is supported by benchmark tests.
+
+OpenAI compared GPT-4O with other major models — GPT-4 Turbo, earlier GPT-4 versions, Claude, Gemini, and more — across different benchmarks like:
+
+MLU
+
+GPQA
+
+Math reasoning
+
+Human evaluation
+
+MGSM
+
+DOP (which checks performance using F1 scores — precision + recall)
+
+In almost every category, GPT-4O comes out on top, followed by GPT-4 Turbo. This clearly shows how optimized and powerful GPT-4O is compared to predecessors and competitors.
+
+Another major highlight of GPT-4O is its lightning-fast speed. The first time I tested it, I was genuinely surprised — the speed was unbelievable. Compared to GPT-4, GPT-4O responds almost instantly. That’s why it’s highly suitable for real-time applications where latency matters.
+
+What shocked me even more was the human-like response time. According to OpenAI, GPT-4O can respond to audio in as little as 232 milliseconds, with an average of around 320 milliseconds — almost the same as how two humans respond to each other in a natural conversation. That’s a massive achievement in AI.
+
+On top of all this performance improvement, GPT-4O is also 50% cheaper than GPT-4 models.
+
+For example:
+
+GPT-4 Turbo cost $10 per 1M input tokens → GPT-4O costs $5 per 1M input tokens.
+
+GPT-4 Turbo output cost $30 per 1M tokens → GPT-4O costs $15 per 1M.
+
+So not only do you get a faster and more accurate model, but you also get it at half the cost.
+
+# **H) New: Demo: GPT-4 Vs GPT-4o**
+
+So when I was comparing the ChatGPT-4 model and the ChatGPT-4O model, I had mentioned to you guys that the 4O model is much, much faster. I think we even said that it is almost twice as fast and also 50% cheaper. So I thought, why don’t I actually put this to the test? What if I execute the same input or the same prompt in ChatGPT-4 and then run that exact same prompt in ChatGPT-4O? What kind of response difference would I actually see?
+
+So that’s exactly what I did. If you look here, on the left-hand side, I have ChatGPT-4 opened up, and on the right-hand side, I have ChatGPT-4O. I am giving both of them the exact same question or the exact same prompt: “Write a one-page story on a guy who loved to create content on Udemy for IT courses.” The same prompt is written on the left, and the same prompt is written on the right.
+
+Now for fun, I decided to execute the prompt first on GPT-4 and immediately after that on GPT-4O. So I run it first on GPT-4, and quickly I trigger the same on GPT-4O as well. And here’s what happens. GPT-4O starts generating the answer almost instantly. It begins typing, continues smoothly, and within seconds, it is completely done creating the one-page story. Meanwhile, ChatGPT-4 is still typing. It’s still generating, still going, still processing, still completing the story, while GPT-4O has already finished the entire response.
+
+And that’s the difference. Even though this is a very simple, very layman-level example, it clearly shows that what OpenAI says about the GPT-4O model being significantly faster is absolutely true. It really is much faster than GPT-4, and this small demonstration makes it very easy to understand the difference in real time.
+
+# **I) New: What is GPT-4o Mini?**
+
+So after taking a look at the GPT-4 model, it’s time to take a look into the GPT-4 Mini model. Now, the thing is, I was actually wondering—when OpenAI brought the GPT-4 model in May 2024, what was the urgent need to bring GPT-4 Mini so soon? And the reason, I’ll tell you, is competition. We all know that OpenAI is doing extremely well in the field of LLMs, the large language models, but what is happening in the market is that a lot of players are now coming with SLMs. You might not have heard the term much, but you can think of it as a Small Language Model. For many use cases, you actually don’t need a large language model. You don’t need that level of computational resources, and you don’t need that level of GPUs. Think about simple use cases for small to mid-sized companies— they don’t require such heavy computation. That is where players like Gemini Flash, and companies like Anthropic, come into the picture. Anthropic came up with the Claude Haiku model, and this Claude Haiku model was giving good competition to GPT-3.5 Turbo because that was also a smaller and cheaper model. The bigger GPT-4 models are still quite expensive, especially for small to mid-sized companies.
+
+So that is where OpenAI introduced GPT-4 Mini—to compete with these smaller models. If you notice, the comparison here is not between GPT-4 Mini and the big GPT-4 models. Instead, the comparison is between the smaller-sized models: GPT-3.5 Turbo, Gemini Flash, and GPT-4 Mini. Yes, there is a slight comparison with GPT-4 as well, but the main focus is on the small models. GPT-4 Mini stands for “small”—it is a compact, smaller, and efficient version of the larger GPT-4 and GPT-4 Turbo models. It is specifically designed for deployment in resource-constrained environments, meaning places where you don’t have enough computational power or where you don’t even need much computational power. In those situations, GPT-4 Mini becomes very useful. The release date of GPT-4 Mini is quite recent—July 2024. As I said, it's compact, and it's designed to run efficiently on hardware with limited computational resources.
+
+It also provides faster response times compared to the full-sized GPT models, making it ideal for time-sensitive tasks. Now you may ask, why does it give faster responses? The reason is simple—it has fewer parameters and much less computation to do. When you query the model, there is less internal processing required, so the response naturally comes faster. And when we look at the model evaluation scores where we compare GPT-4 Mini, Gemini Flash, and other models across different benchmarks that we discussed in the previous video, you will see that GPT-4 Mini actually comes first in most of the cases, and Gemini Flash comes very close in many of those benchmarks.
+
+Another important aspect is power efficiency. GPT-4 Mini prioritizes lower power consumption, unlike the large models that require significant energy. Everywhere today, there is discussion about being energy-efficient or creating greener systems. Large language models are powerful, but they aren’t energy-efficient because they require massive computational resources and high power consumption. Smaller language models, on the other hand, need much fewer GPUs and much less power, making them a good fit for companies aiming to reduce operational costs and carbon footprint.
+
+A very important point is that GPT-4 Mini can be installed on local devices. Even if you don’t have internet access or cloud infrastructure, these models can run locally. They are designed to function independently of server-based computation. Larger models rely heavily on cloud-based systems—the query has to travel to the server, the model processes it, and the response comes back. But GPT-4 Mini can be deployed on devices like smartphones, tablets, IoT devices, and even wearable devices. This is where we talk about edge deployment, and GPT-4 Mini fits that requirement perfectly.
+
+It is also extremely cost-effective. The operational costs are lower because the resource requirements are reduced. If OpenAI is not spending as much on massive GPU clusters for this model, they don’t need to charge customers high prices. For example, when we compare the price of a large model like GPT-4 Turbo with GPT-4 Mini, the difference is huge. If we were paying around $5 for 1 million tokens with GPT-4 Turbo, with GPT-4 Mini we are paying around $0.15 per million tokens. For a small to mid-sized company, this is a massive difference. Why would they pay so much more when their use case doesn’t require a big model? That is exactly why OpenAI realized the need to bring a smaller model to the market, one that can compete with all these new compact models.
+
+And OpenAI clearly says that you can easily replace GPT-3.5 Turbo with GPT-4 Mini. So it's really simple—wherever in your code you’re using model = GPT-3.5-turbo, you can simply replace it with GPT-4 Mini, and you’ll get faster responses and pay less money.
+
+Yes, there is also a difference in training. The heart and soul of any AI or generative AI system is the training process—the data used and how the model is trained. GPT-4 Mini is easier and faster to train compared to large-scale GPT models that need extensive datasets and powerful GPUs. Since the model is smaller, the training is naturally more simplified.
+
+What I personally feel is that the market will eventually split into two segments: SLMs and LLMs. LLMs will include the big models like GPT-4, GPT-4 Turbo, and others. SLMs will include GPT-4 Mini and similar models from other companies. These two streams will run parallel, and a lot of competition will come from Google’s Gemini series as well. So keep watching this space.
+
+# **J) What are tokens ?**
+
+Okay, now it's time to talk about tokens. So guys, remember that tokens are kind of the backbone for any large language model. When we discuss OpenAI models, they process text using tokens. Whatever text you provide — it could be a sentence, a group of words, or even individual letters — is always broken down into tokens because the LLMs understand and work with tokens. Based on these tokens, the models can understand the context of what you want to convey and generate responses. Essentially, the models learn the statistical relationships between tokens, so they are always analyzing and generating text in terms of tokens. That’s why tokens are such an important concept and need to be understood well. A token is simply the basic unit of text — it can be a word, part of a word, or even punctuation. Tokens are the building blocks that models like ChatGPT analyze and generate. For example, if you give the input “hello how are you,” the text is broken into tokens: “hello” is one token, “how are” could be another token, and “you” is a separate token. Spaces are also considered, so this input ends up being about four tokens. The process of breaking text into tokens is called tokenization. 
+
+Large language models work on these tokens rather than the original words, so when you input a sentence like “Hey GPT, how’s the weather today?” the model tokenizes it, processes the tokens to understand the context, and then generates output tokens. These output tokens are then converted back into human-readable text because if the model gave only tokens, humans wouldn’t understand it. Models have a fixed vocabulary size, meaning they can recognize only a certain number of unique tokens. Using tokens allows LLMs to efficiently process large amounts of text by breaking complex structures into manageable pieces. Understanding tokens is important because, in the next lecture, we’ll talk about pricing, and you’ll see that tokens are the key behind it — you pay for the input tokens you send and the output tokens the model generates. This is the foundation of the pricing model that OpenAI has developed. That’s why understanding tokens is really, really important.
+
+# **K) Pricing Model for ChatGPT**
+
+Hey, so it's time to talk about the pricing for OpenAI. The pricing information is available at openai.com/pricing, and it is designed to be simple, transparent, and flexible. Essentially, you only pay for what you use, making it a pay-as-you-go model. This is where the concept of tokens, which we discussed in the previous lecture, becomes very important, because the entire pricing model revolves around tokens. Each OpenAI language model has different capabilities and corresponding price points, and prices are typically measured in units of 1,000 or 1 million tokens. Tokens can be thought of as pieces of words, where 1,000 tokens roughly correspond to 750 words. For example, a paragraph of about 35 words would be around 35 tokens. It is crucial to understand tokens because you pay both for the input you provide to the model and for the output generated by the model. For instance, if you are using the GPT-4 Turbo model, you are charged $10 per 1 million input tokens and $30 per 1 million output tokens. Different models have different pricing; GPT-4 standard may charge $30 for input and $60 for output, whereas GPT-3.5 is cheaper at about $5 per 1 million tokens. In addition to language models, OpenAI also offers fine-tuning models, embedding models, and image models, each with their own pricing structure. 
+
+Another important point is that API access is billed separately from ChatGPT subscriptions. While ChatGPT 3.5 is free to use via chat.openai.com, usage of GPT-4 or other advanced models requires payment, and API calls also have separate charges. ChatGPT Plus subscriptions, which cost $20 per month, cover usage via chat.openai.com but do not include API access, which must be paid for separately. This separation of API access and subscription plans highlights why understanding tokens is critical for cost management. OpenAI also provides a billing dashboard where users can top up funds, set budgets, and track usage. Overall, by understanding tokens and the separate pricing for API calls versus subscription use, users can manage their costs effectively and select the appropriate model for their needs. With this, we conclude the lecture on OpenAI pricing. Thanks for watching.
+
+# **L) Demo: How to make API Calls with OPENAI APIs**
+
+Hello and welcome. I'd say this is the most important lecture of the series of lectures that we are having. Why? Because it talks about the prerequisites that are needed to make the API calls for OpenAI. Now, when I was actually studying, it took me a while to understand how the whole process works. The best thing I would suggest is that it is actually pretty simple, even though it’s not well documented anywhere.
+
+You just need to go to platform.openai.com. Once you log in with your credentials, the next step is to go to Settings, and then to Billing. As I mentioned earlier, making API calls is a paid feature, so you need to top up your balance. Initially, your balance will be zero dollars. For practice purposes, you can top it up with a small amount, like $10, which is what I did.
+
+The next important step is working with API keys. In all the demos we’ll do, we will make API calls to different models, and for authentication, you first need to generate an API key. OpenAI has introduced a concept called Project API keys. Previously, there were normal user API keys, but they are deprecating that model. Now, you can click on Create New Key, give it an optional name like "Testing APIs," select the default project, and click Create a Secret Key.
+
+As part of the process, OpenAI will verify that you are human. They may ask you to complete a puzzle, such as rotating an object in the direction a hand is pointing. This verification usually has to be completed multiple times. Once verified, you will be given a secret key. It is very important to copy and save this key safely, because you won’t be able to retrieve it again.
+
+Next, open your environment for coding. For example, in Anaconda, go to a Jupyter notebook and create a small text file named openai.env. Inside this file, add an entry with your secret key. Make sure to assign it to the variable OPENAI_API_KEY because we will be referencing this variable in the upcoming demos to make API calls to OpenAI. This ensures that your API key is securely stored and accessible in your code.
+
+So, to summarize, the main prerequisites for making API calls using OpenAI are: first, top up your balance by going into Settings → Billing; second, create your secret key, keep it safe, and store it in an openai.env file with the variable OPENAI_API_KEY.
+
+With these steps completed, you are fully prepared to make API calls to OpenAI in the next demos.
+
+# **M) Demo: Make a simple API Call**
+
+See how you can work and make simple API calls to OpenAI. Before you start, make sure that the OpenAI.env file is already created, which contains your secret key, and that you have topped up your credit under the billing section. If your balance shows $0, just top it up by something like $10 for practice purposes.
+
+The first step is to install the required modules for making API calls. The OpenAI Python module might not be installed by default, so in your Jupyter notebook, open a new kernel and run pip install openai. If it’s already installed, it will indicate “requirement already satisfied.”
+
+Next, we will make a simple API call. For example, you can ask: “Who is the Prime Minister of India?” and request some bullet points on his achievements, similar to how you would interact with ChatGPT. To do this in Python, you need a few libraries: openai, load_dotenv, and os. The environment file we created, OpenAI.env, will be loaded using load_dotenv(). Then, the secret key stored as OPENAI_API_KEY in the environment file is accessed using os.environ.get("OPENAI_API_KEY"). This key is passed to the OpenAI client for authentication.
+
+Once authenticated, you can create a response using the client. For example:
+
+client = openai
+response = client.chat.completions.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Who is the Prime Minister of India? Give bullet points on his achievements."}]
+)
+print(response)
+
+
+Here, you can choose the model you want, like GPT-4, GPT-3.5 Turbo, or GPT-4 Turbo. The API call checks your credentials, authenticates your request, and returns a response. For example, using GPT-4, it may respond: “Prime Minister of India as of my knowledge cutoff October 2021 is Narendra Modi,” followed by notable achievements such as the implementation of GST, the Clean India initiative, and the Jan-Dhan Yojana.
+
+The response also provides token usage: completion tokens, prompt tokens, and total tokens. In this example, the completion tokens were 332, prompt tokens 21, and total tokens 353. Remember, you pay for both input tokens (your prompt) and output tokens (the response).
+
+This demonstrates how easily you can make a simple API call to OpenAI and retrieve information.
+
+# **N) Demo: How to create Embeddings ?**
+
+This would be a video on a demo on embeddings. You might remember that we previously understood what an embedding is. Embedding is a way of converting the features of an object, like a word, into a vector of real numbers. Essentially, you take a word, a document, or even an image, and convert it into several real numbers. For example, if you take the word “Apple,” it could refer to the fruit or the company that makes phones and MacBooks. A machine or an embedding model can analyze the context and produce vectors that capture these meanings.
+
+In this exercise, we’ll test what we’ve learned. For instance, if you convert the words “cat” and “kitten,” their vectors will be closely spaced in the vector space because they are related. A “dog” vector will be farther away because, while it is also an animal, it differs from “cat” and “kitten.” This demonstrates the relationship and distinction between objects in vector space.
+
+To implement this, we call the OpenAI API using client.embeddings.create(). For example, we can input a word like “cat” and use the model text-embedding-3-small. Running this code in Jupyter Notebook generates a large set of real numbers, which are the embeddings for the input word. Each number represents a feature of the word in the context of the model, such as “domesticated,” “animal,” etc.
+
+Since these embeddings often have very high dimensions, comparing them directly can be challenging. To make them easier to analyze, we reduce their dimensions, for example, down to seven dimensions. We can normalize the arrays and print them, which gives a more manageable representation while still preserving the relationships between words.
+
+For example, when we generate embeddings for “cat,” “kitten,” and “dog,” we see that “cat” and “kitten” produce similar vectors, indicating their close relationship, while “dog” shows a different set of values, reflecting its distinction. In a vector space, “cat” and “kitten” would be close, while “dog” would be farther away.
+
+This dimensional reduction allows us to visualize and analyze relationships between words more clearly. The embeddings convert the features of an object into real numbers, which can then be stored in a vector database for further applications like similarity searches, recommendations, or machine learning tasks.
+
+This demo helps illustrate how embedding models work, converting complex features of objects into numerical vectors that capture relationships and context. You should now have a clear understanding of embeddings and their practical application. 
+
+# **O) Demo: Image generation using DALL·E in the API**
+
+This is a quick demo to showcase image generation using DALL·E, and it’s an amazing experience. The process is quite simple. All you’re doing is making a call to OpenAI for image generation, while the rest of the setup remains similar to the previous examples. You first import the necessary libraries, such as openai and load_dot_env. The openai.env file is required to read your API secret key. You access the environment variable using API_KEY and initialize the client with OpenAI.
+
+Next, you create a response by calling client.images.generate(). Unlike text generation, here the model used is dalle-3, which is specifically designed for image generation. The most important part is the prompt, where you describe the image you want to generate. For example, you could request an image of a black furry dog with black eyes and a dog collar, alongside a white cat with blue eyes and a necklace. You also specify the type of image and its size, such as 1024 by 1024 pixels.
+
+Once the request is made, the API generates the image and returns a URL where the image can be viewed. Execution may take a few seconds or minutes, depending on the request, so patience is needed. When you open the URL, you will see the generated image. One interesting observation is that each API call can produce a different version of the image; it is not always identical, which adds creativity and variety.
+
+This demo clearly demonstrates the power of OpenAI, showing how beautifully and easily images can be generated with a simple API call. It highlights the flexibility of DALL·E in converting descriptive prompts into visual content.
+
+# **P) Demo: Convert Speech to Text**
+
+This is a very quick demo on speech-to-text and how you can use OpenAI to convert audio or video files into text. The process is quite straightforward. You can work with MP3 or MP4 files and extract the spoken content into text format. First, you import the necessary OpenAI libraries and access your API key from the environment variable, as we have done in previous demos. Next, you specify the path to your audio or video file. In this demo, an MP4 video of Tom Cruise is used as an example.
+
+You then create a variable called transcription and call client.audio.transcriptions.create(). For speech-to-text, OpenAI provides the Whisper model, which is used here. You pass the model name as whisper and the file path to the audio file. Finally, you print the output using print(transcription.text). The transcription variable contains the text generated from the audio, which is displayed in a readable format.
+
+When you run the code, OpenAI processes the audio file and generates highly accurate text. It not only captures the content but also maintains proper grammar, punctuation, and formatting. Full stops, commas, and question marks are placed correctly, reflecting the spoken language faithfully.
+
+In the demo, the transcription reads: “Tom, your company became prominent on the internet with the release of a fake Tom Cruise video, deep Tom Cruise, that I think attracted like a billion views on TikTok and Instagram. Which leads me to my first question, which is, please can we at TED have our own Tom Cruise video, please?” The output demonstrates the model’s precision and reliability in converting speech to text, making it a powerful tool for audio and video transcription. Thanks for watching.
+
+# **Q) New: What is OpenAI O1 Model ?**
+
+As I promised, whenever there are advancements in OpenAI or Azure OpenAI, I’ll keep bringing you updated videos with new content. Today, I’d like to talk about the OpenAI O1 model.
+
+The name “O1” might make you wonder why it exists when GPT-4 and GPT-5 were already around. There’s no official answer, but it’s likely that “O” stands for OpenAI and “1” indicates the first version. This model is designed for deep reasoning and complex tasks. Instead of labeling it as GPT-5 or 6, OpenAI introduced a new series called O1 models. This series continues with O2, O3, and so on, specifically for complex reasoning tasks, differing from conventional generative AI models like GPT-3.5 or GPT-4.
+
+Your fundamentals are important here. In Lecture 16, we discussed reinforcement learning, which forms the basis for these models. Reinforcement learning involves agents learning to make decisions through actions and feedback in the form of rewards or penalties. O1 models are large language models trained with reinforcement learning to perform complex reasoning.
+
+One of the key features of O1 models is that they “think before they answer.” Unlike GPT-4 models, which generate responses immediately, O1 models produce an internal chain of thought before responding. This chain of thought mimics human problem-solving by breaking problems into smaller steps. Input is processed through multiple internal steps before generating the final output, improving accuracy and transparency.
+
+It’s important to note that O1 models are slower but more accurate due to this internal reasoning. They excel in scientific reasoning, ranking in the 89th percentile on Codeforces, surpassing PhD-level accuracy on GQA benchmarks, and performing significantly better than GPT-4 in competition math tasks.
+
+Because O1 models are computationally intensive, OpenAI also offers a smaller, faster, and more affordable version called O1 Mini. This mini model is adept at coding, math, and scientific tasks where extensive general knowledge isn’t required.
+
+The cost of O1 models is higher due to the introduction of “reasoning tokens.” These tokens are used internally to analyze prompts and explore multiple approaches before generating a response. They occupy space in the model’s context window and are billed as output tokens, contributing to the higher cost. Once the final answer is produced, reasoning tokens are discarded, but their usage still affects billing.
+
+A simple example illustrates the chain-of-thought process: if there are three apples and you take away two, a GPT-4 model might instantly respond “one.” The O1 model, however, goes step by step: first determining the total number of apples, then subtracting the two taken away, and finally concluding that one apple remains. This stepwise reasoning ensures accuracy and clarity.
+
+In summary, O1 models are designed for complex reasoning, using reinforcement learning and chain-of-thought processing to produce highly accurate outputs. They are slower and more expensive but excel at tasks requiring deep reasoning. In the next lecture, we’ll demonstrate a comparison between GPT-4 prompts and responses versus O1 models.
+
+# **R) Demo: Compare GPT-4o vs OpenAI O1**
+
+So, after learning about the OpenAI O1 model, you might be excited to try it out yourself. You want to jump into ChatGPT or OpenAI and give it a go. But when you check your plan, you’ll notice you’re on a free plan. Here, you only get access to GPT-4 or the mini version of GPT-4.
+
+Even with the ChatGPT Plus plan, which costs around £20 per month, you get limited access to O1 and O1 Mini. If you want full, unlimited access to the O1 model, you’d need the Pro plan, which is about £200 per month, mostly aimed at enterprises.
+
+So, how do you test the O1 model and compare it with GPT-4? It’s simple:
+
+Go to platform.openai.com
+ and log in with your credentials.
+
+Navigate to Playground.
+
+Click Compare.
+
+Here, you can select GPT-4 on one side and O1 or O1 Mini on the other. For example, select the O1 Mini Preview model released in September 2024.
+
+Now, let’s try a simple prompt: “I am planning to visit London. Give me some areas of interest I should visit.”
+
+GPT-4 responds quickly, prioritizing speed and accuracy. You’ll get a list of around 15 locations.
+
+O1, on the other hand, is slower but produces a more thoughtful and user-friendly response. It gives explanations for each recommendation, adds tips on transportation, weather, cultural etiquette, and other practical advice. You might even get around 20 suggestions, plus extra travel tips.
+
+This shows the key difference: GPT-4 focuses on speed, while O1 emphasizes reasoning and context awareness.
+
+Here’s another example: “John is older than Sarah, Sarah is older than Tom. Who is the youngest?”
+
+GPT-4 quickly responds that Tom is the youngest.
+
+O1 walks through a chain-of-thought, reasoning step by step. It arranges the ages from oldest to youngest internally, explains the logic, and then concludes that Tom is the youngest. Even for a simple problem, O1 follows a systematic reasoning process.
+
+This clearly demonstrates how O1 models differ from GPT-4 models—they are reasoning-based, slow but accurate, and produce outputs with deeper contextual understanding.
+
+# **VII) Azure OpenAI Foundations**
+
+# **A) Azure OpenAI - Intro**
+
+By now, you should have a solid understanding of how OpenAI works. We’ve covered the foundational concepts, explored features, and done several demos using Python and Jupyter Notebook.
+
+Now, it’s time to shift focus to Azure OpenAI. This is an important step because once you’ve built a strong foundation with OpenAI, working with Azure OpenAI opens up enterprise-grade capabilities and integrations.
+
+Here’s what we’ll cover in this module:
+
+Introduction to Azure OpenAI: What the service is, its history, and the partnership Microsoft has with OpenAI.
+
+Models on Azure: We’ll explore different models available, but note that not every model is accessible in every Azure region. You’ll need to understand limits, quotas, and the request access process.
+
+Setup and Demos: Step-by-step guidance on setting up your Azure OpenAI service and a walkthrough of the Azure OpenAI Studio.
+
+Playgrounds: Microsoft provides various playgrounds—completions, image generation (DALL·E), and more. We’ll do practical demos in each playground.
+
+Web App Deployment: You’ll learn how to deploy your own web app directly from the playground, without any coding. This showcases the simplicity and power of Azure OpenAI.
+
+Quiz: After all the demos, we have a fun and challenging quiz to test your knowledge of Azure OpenAI.
+
+This is a comprehensive module focusing entirely on Azure OpenAI. In future modules, you’ll see even more services and applications related to Azure OpenAI introduced.
+
+# **B) What is Azure OpenAI**
+
+After gaining a solid understanding of OpenAI, I thought it would be beneficial to take a deep dive into Azure OpenAI. This is particularly useful for enterprise customers. For students who have grasped OpenAI fundamentals and want to explore Azure OpenAI and its organizational use, this series of lectures will be highly valuable.
+
+The first question that comes to mind is: What is Azure OpenAI? It’s quite straightforward. As the name suggests, it is a collaboration between Microsoft Azure, a cloud computing platform, and OpenAI, an artificial intelligence research organization. Together, they provide a product called Azure OpenAI.
+
+The beauty of Azure OpenAI is that it integrates OpenAI models, making them available directly on the Microsoft Azure cloud platform. Models like GPT, Codex, and DALL·E for image creation, which we previously studied with OpenAI, can now be accessed through Azure. This service is primarily designed for enterprise customers, providing a trusted, secure environment to integrate AI into various business functions such as customer support and content generation.
+
+For enterprise applications, integrating AI into workflows becomes much easier using Azure OpenAI. Organizations can connect their applications to large language models (LLMs) and leverage AI capabilities efficiently. Since Azure is a hyperscaler, it allows scalable AI model deployment and management. Enterprises can dynamically scale resources such as GPUs and CPUs to support high-performance AI workloads.
+
+The main motivation behind this partnership was security and compliance. Enterprise customers are highly focused on these aspects, and Microsoft Azure provides a strong security and regulatory framework. By leveraging Azure, organizations can adopt OpenAI models while maintaining compliance and protecting user data. Azure OpenAI emphasizes high security and adherence to regulatory standards, ensuring enterprise-grade safety for AI workloads.
+
+Azure OpenAI is also very developer-friendly. Users can start by putting prompts directly into the interface and even view the generated code. Minimal tweaks are often enough to have a working model. You can also take base models, customize them, or perform prompt engineering, making it extremely accessible even for users with limited development experience. The platform provides both a GUI and APIs, giving flexibility to tailor AI solutions as per requirements.
+
+Regarding customization, Azure OpenAI allows users to start with a base model like GPT 3.5 and build on top of it, either through prompt engineering or by training the model further. It provides a simple, intuitive workflow for creating AI solutions suited to specific organizational needs.
+
+Microsoft has a global infrastructure spanning 60–70+ data regions, allowing Azure OpenAI to achieve wide availability. Azure’s data centers, often interconnected with other enterprise platforms like Oracle, provide OpenAI with global reach, which is especially valuable for enterprise adoption.
+
+Ultimately, Azure OpenAI is all about collaboration and innovation. Microsoft and OpenAI developers are working together to advance AI development within the Azure ecosystem. Microsoft contributes significantly to the development and scaling of these AI models, supporting collaborative innovation and the widespread adoption of AI for enterprise use.
+
+With this, you now have a comprehensive understanding of what Azure OpenAI is: a collaborative product between Microsoft Azure and OpenAI, offering enterprise-ready AI solutions with security, scalability, and developer-friendly tools.
+
+# **C) History behind Azure OpenAI**
+
+As with any new technology or product, I like to start by looking at its history. Let’s take a look at the history behind Azure OpenAI.
+
+It all started in 2019. Around that time, Elon Musk had already withdrawn his support from OpenAI. The reason was that OpenAI was moving toward a more enterprise-focused approach, aiming to make the technology more closed and secure, rather than staying fully open as it originally was. Elon Musk wasn’t fully aligned with this direction, so he decided to step away.
+
+This is where Microsoft and Satya Nadella came into the picture. Microsoft partnered with OpenAI to integrate OpenAI technologies within the Azure ecosystem. By 2019, Azure was already emerging as a strong cloud vendor, second only to AWS. This partnership strengthened Microsoft’s position in the cloud space while giving OpenAI the support it needed to grow.
+
+In that same year, Microsoft announced a $1 billion investment into OpenAI as part of the partnership agreement. OpenAI, having lost Elon Musk’s backing, welcomed this significant funding, which helped them continue developing their AI technologies.
+
+The Azure OpenAI service itself was officially launched in 2021. The service was primarily aimed at enterprise customers, providing them access to OpenAI models such as GPT-3 and DALL·E. The goal was to make these powerful AI models available within the secure and scalable Azure platform. Hence, the name Azure OpenAI Service.
+
+Since its launch, the service has expanded to include more sophisticated AI models, such as Codex, which converts natural language into real code and forms the foundation of GitHub Copilot. Other models, like DALL·E, were also integrated, enhancing the offerings for complex enterprise use cases.
+
+From the very beginning, Microsoft emphasized that this collaboration was enterprise-focused. By “enterprise-focused,” they mean that the service addresses security, compliance, and scalability, which are critical priorities for large organizations. Azure OpenAI ensures that enterprises can adopt AI solutions while adhering to strict security standards and leveraging the scalable infrastructure of Microsoft Azure.
+
+So, with this, you now have a clear understanding of the history behind Azure OpenAI, from its inception in 2019 to its launch in 2021 and the enterprise-centric focus that drives it today.
+
+# **D) Models available with Azure OpenAI(Regions)**
+
+In this video, we will explore the various Azure OpenAI regions and also look at the different models available from OpenAI. It’s important to note that the availability of these models can vary from region to region.
+
+The best way to check this information is by going to learn.microsoft.com. From there, navigate to the product documentation, select Azure, and then go to Azure AI services. Within this section, you will find a link to Azure OpenAI, which is the main area of interest for us.
+
+On the left side, you will see a list of all the available models. This is very much in sync with what we learned in the OpenAI documentation itself. Some of the models you’ll see include:
+
+GPT-4 Turbo and GPT-4
+
+GPT-3.5
+
+Embeddings model, which is useful for creating vectors
+
+DALL·E, for image generation
+
+Whisper, for speech-to-text
+
+TTS, for text-to-speech
+
+Additionally, the documentation provides a model summary along with region availability, which is extremely important. You can scroll through each model to understand the differences, such as what GPT-4 can do versus GPT-3.5, and read the detailed descriptions.
+
+However, the key point to remember is that not every model is available in every region. This is likely due to load balancing, ensuring that customers are distributed across regions rather than concentrated in one.
+
+To check model availability, click on the expand table option in the documentation. This table gives a clear overview of which models are available in which regions. For example, the DALL·E model is available in East US, but if you check West US, it may not be available. This is why it’s critical to verify your region and model availability before starting work with Azure OpenAI.
+
+On the other hand, some models like text embeddings are available across all regions. Other models, such as GPT-4 and GPT Vision, are still limited in several regions.
+
+So, the best practice is to always refer to the official documentation, expand the tables, check the model summary, and confirm availability in your region before proceeding with any project. Once done, you can collapse the table and continue exploring the documentation.
+
+# **E) Limits & Quotas - Important Consideration**
+
+The next important consideration when working with Azure OpenAI is understanding quotas and limits.
+
+To check these, click on the quotas and limits section in the documentation. Here, you’ll find that there are certain limits you need to be aware of. For example, the maximum number of OpenAI resources per region, per subscription is around 30. These limits are calculated based on the number of tokens per minute allowed.
+
+The documentation also specifies default quota limits, such as only two concurrent requests allowed at the same time. For DALL·E, there’s a slight improvement, allowing two capacity units and six requests per minute. It also mentions limits on fine-tuned model deployments, which is five deployments.
+
+Keep in mind that these quotas may change over time. If you check the documentation after a few weeks, some figures might have been updated. Importantly, quotas are assigned per subscription, per region, and per model. This means that limits can differ depending on the region or the model you are using.
+
+Remember our lesson on tokens: roughly four characters make up one token, and costs apply to both input and output tokens. This is why it’s crucial to understand and monitor token usage.
+
+For example, in East US, GPT-3.5 Turbo allows 240,000 tokens per minute. You could have a single deployment consuming all 240K tokens per minute, or split across multiple deployments (e.g., two deployments using 120K each), but the total must not exceed 240K tokens per minute. Token limits vary per model and per region, so always check the documentation.
+
+Another critical distinction is between tokens per minute (TPM) and requests per minute (RPM). For instance, Microsoft sets a limit of six requests per minute per 1,000 tokens per minute. This ensures that workloads are distributed safely and don’t overload the system.
+
+When designing your applications, it’s important to avoid exceeding quotas immediately. Gradually increase workloads, implement retry logic, and test your system under varying load patterns. This prevents failures caused by hitting quota limits unexpectedly.
+
+If your deployment exceeds the assigned quota, there are two options:
+
+Request an increase from Microsoft. You need to submit a business case explaining why the quota increase is necessary.
+
+Reallocate quota from another deployment. If one deployment isn’t using its full quota, you can transfer unused tokens to another deployment.
+
+Remember, the total quota is fixed unless officially increased. Microsoft prioritizes quota increase requests based on traffic and business justification. These requests can be submitted via the quotas page in the Azure OpenAI studio.
+
+By understanding quotas and limits, you can effectively plan your usage and avoid unexpected failures in your Azure OpenAI applications.
+
+# **F) How Pricing Works in Azure OpenAI**
+
+Nothing comes for free in life, and as a good friend in digital marketing says, if something is free, you are the product. The good thing with Azure OpenAI is that you are paying for the service, so you remain in control. Let’s dive into pricing for Azure OpenAI.
+
+When you click on pricing, you’ll see overviews for different regions. The pricing also depends on the currency of the region. For simplicity, we’ll focus on East US and USD.
+
+The pricing model in Azure OpenAI revolves around three main components: context, input, and output. You may already be aware of these concepts from previous lessons on tokens. Pricing is based on both the input tokens (what you ask the model) and output tokens (the response generated by the model). All charges are calculated per 1,000 tokens.
+
+Now, let’s talk about context. The context determines how much of the previous conversation the model can refer to when generating a response. For example, GPT models can have context windows of 4K, 8K, or even up to 128K tokens, as in GPT-4 Turbo. Higher context allows the model to understand longer conversations, but it also increases the cost.
+
+For instance, if you ask, “Who is the Prime Minister of India?” the model can store this information in its context. Then if you ask, “What are his accomplishments?” it understands the context and provides relevant answers without needing you to repeat the initial information. So, increasing context size improves intelligence and response quality but increases the price.
+
+Input and output tokens are priced separately. Base language models charge per 1,000 tokens, while image models may have slightly different pricing. Availability also depends on the region, so always check which models are accessible in your selected Azure region.
+
+To get a more precise understanding, you can use the Azure pricing calculator. For example, for GPT-3.5 Turbo:
+
+Go to the pricing calculator.
+
+Select Machine Learning → Azure OpenAI Service.
+
+Choose the region (East US), model type (Language Models), and the specific model (GPT-3.5 Turbo 16K).
+
+Enter your input and output token counts.
+
+For instance, charging per 1,000 tokens, if you use 100 units of input tokens at $0.0005 per 1,000 tokens, the cost is $0.05. For 100 units of output tokens at $0.0015 per 1,000 tokens, the cost is $0.15. The total monthly cost would be around $0.20—this is a rough calculation, but it gives a good idea of pricing.
+
+Pricing also varies based on the support plan you choose:
+
+Developer Support – ideal for non-production environments like Dev or UAT.
+
+Standard – targeted at small to mid-sized companies.
+
+Professional Direct – for enterprise customers requiring full support.
+
+The higher the support level, the higher the cost. Enterprises benefit from professional support, ensuring smooth operation and guidance from Microsoft.
+
+So in summary, when working with Azure OpenAI, always keep in mind:
+
+Context – how many previous tokens the model considers.
+
+Input tokens – what you send to the model, priced per 1,000 tokens.
+
+Output tokens – what the model returns, priced per 1,000 tokens.
+
+Understanding these three factors will give you a clear view of how pricing works and help you plan your usage efficiently.
+
+# **G) Demo: Setup Azure OpenAI Service**
+
+Okay, so the time has finally come to get a glimpse of the Azure OpenAI service. Now you guys must be thinking that, hey, she is doing so much of talking but not showing us, but what if I tell you the wait is still not over? You might have to wait based on your current circumstances, so I'll tell you why that is. So first of all, I take it that you have the basic, basic knowledge of Azure. If you don’t, there are some basic courses available in Azure that you can always check on Udemy and get some foundational understanding around that, but what I’m going to teach is still very basic, and even if you have only some foundational understanding of Azure or the portal, we are still fine. The best way to start is you go to portal.azure.com, right? As I told you, this is the cloud console from where you can create different services. Now let’s say you have to create a VM service or a network resource — all can be done from here. But now we are interested in Azure OpenAI, so either you can search for it or it normally appears as well. So if you say “Azure OpenAI,” you will see that it comes up as a service. Now, first of all, you’ll see that there is nothing here, which is fine. You simply click on “Create Azure OpenAI,” because we need to create this service. 
+
+Now here is the slight catch some of you might have: first of all, it is not easily available. When I say not easily available, it’s not something like you are creating a VM or creating a network resource; here you need a bit of initial registration to be done. Because if you are getting some error over here, then you need to fill a form. There will be a link, and you need to request access through this form. The form will look like this: “Request access to Azure OpenAI Service.” Microsoft has limited it to certain customers because they don’t want it to be freely available, and also because everything comes for a price and they need to have that many computing resources, CPUs, GPUs working in the background as well. It’s a pretty simple form — you give your first name, last name, number of subscriptions or subscription IDs you are interested in; it also needs your subscription ID, which is very important. You can get it from the Azure portal; it shows you how to do so. You go to subscriptions, get the ID, and paste it here. Then very important: if you use any personal email IDs like Gmail, Hotmail, Outlook, Mail.com, they will not be accepted because they want a real customer or company-backed email ID. Then you give the company name, address, city, province, all of which is straightforward, followed by the company website, phone number, and if you have any contact at Microsoft you can give that. A very important part is selecting what services you are interested in. If you want to play around with different services, I would say simply click all of them, because if you leave some unchecked and need them later, you will have to go through more hurdles. So better to choose what is available. You agree on the embeddings model, whichever you want to choose, and then click next. 
+
+Normally it takes around 24 hours, and within 24 hours you’ll receive an email from Microsoft saying your Azure OpenAI service is enabled and you can create it within your subscription. Now let’s say you have done that. It’s straightforward: you go to subscription, choose your subscription — in my case it’s Azure Cloud Alchemy; in your case it may be different. Then you need to give a resource group, which is nothing but a container for isolating your Azure resources. You will have your VMs in a resource group, network resources in a resource group, and same way Azure OpenAI resources will be in their own resource group. So I say something like Azure-OpenAI-RG — a simple name, whatever you like. Then we choose East US because we are interested mainly in chats, embeddings, etc. Then we need to give a name — very important, the name of your resource. This will also be your custom domain name in your endpoint. When giving this name, keep in mind that this will be your Azure endpoint, your company’s Azure OpenAI endpoint, so choose carefully. In my case I say cloud-alchemy-openai. That would be my custom domain. In a forthcoming lecture I’ll show you that when you make API calls this endpoint will be used. Then you choose the pricing tier, which is S0, but if it says the subdomain is already used, you can change the name. So I changed it to cloud-alchemy-azure-openai. Then you choose the pricing tier S0 and click next. From the beginning we said: why Microsoft with OpenAI? Because you get security and compliance. Here is the part: in terms of configuring your network security, you can configure it for selected networks, configure network security, disable external access, or configure private endpoints for private subnets. But for our learning, let’s keep it simple: allow all networks including the internet, because we’re just learning. There is also a concept of tags — used mostly for billing purposes — and then you simply click review and submit. It shows your subscription and then you click create. The deployment begins and you will see deployment in progress. It deploys the Azure OpenAI service, and from here you will be able to interact with the Azure API itself. Within a few minutes, or even less than a minute, the deployment completes. Then you see the deployment name, subscription, resource group, your resource name (which as I told you is the Azure endpoint), next steps, and you can go to the resource. From here you will be able to go into the Azure OpenAI Studio and explore it. But first, let’s close it and then move on to the next lecture.
+
+# **H) What is Azure Open AI Studio ?**
+
+Hello folks, welcome back. Now it's time to take a look into Azure OpenAI Studio. If you're working with Azure OpenAI, this is the platform where you will be interacting or interfacing with all your OpenAI models. So it’s very important to understand what exactly Azure OpenAI Studio is. By definition, Azure OpenAI Studio is a platform designed to facilitate the use of AI technologies for various applications.
+
+If you are already familiar with Azure, you know that you usually log in using portal.azure.com. But for Azure OpenAI Studio, things are slightly different—it is accessed via oai.azure.com, which stands for OpenAI on Azure. However, you don’t have to memorize this URL because you will always be able to access Azure OpenAI Studio directly from inside the Azure portal. So, your journey begins from portal.azure.com, and then you navigate into Azure OpenAI Studio from there.
+
+Azure OpenAI Studio is essentially the place where you work with various models. It is a comprehensive AI environment that allows you to build, train, and manage AI models all in one place. One of the most important sections in Azure OpenAI Studio is the “Playground.” Microsoft uses the term “playground” because they understand this is a learning environment where people explore, test, certify ideas, and once ready, deploy models into production applications.
+
+Within Azure OpenAI Studio, the “Assistant Playground” is an interactive space where users can experiment with conversational AI models powered by OpenAI. This user-friendly interface lets you craft dialogues, test responses in real time, and refine your AI assistant implementation based on the output. This is where you build your interactions.
+
+Next, you have the “Bring Your Own Data” feature. By now, you already understand the concept of RAG (Retrieval-Augmented Generation) and vector databases. Since OpenAI models are not trained on your internal company data, Microsoft provides a mechanism where you can bring your own documents and integrate them with the model. This enables enterprise-grade RAG implementations within Azure.
+
+Another key area is the “Chat Playground,” where you can test GPT-3.5, GPT-4, and other GPT models. It acts like your own customized ChatGPT environment where you can experiment with prompts, parameters, and expected behaviours. Similarly, there is the “Completions Playground,” which focuses more on specific tasks like summarization, content generation, classification, quiz creation, letter writing, email drafting, and other structured use cases. Each playground is meant for different scenarios, and we will explore them in detail later.
+
+Azure OpenAI Studio also includes the “DALL-E Playground,” where you can create unique images using the DALL-E model. It maintains the same simplicity and user-friendly design as other sections, allowing you to generate visuals without needing to write any code.
+
+The studio simplifies deployment and scaling of AI models significantly. Even if you don’t write code, the platform provides a “View Code” option for every configuration you create, automatically generating the code behind your actions. This is extremely useful for developers transitioning from experimentation to production systems.
+
+Furthermore, Azure OpenAI Studio gives you access to all major OpenAI models, including GPT-3, GPT-4, Codex for code generation, and DALL-E for images. You can even fine-tune models. You start with a base model, then fine-tune it using your own data, prompt patterns, and instructions—everything we discussed theoretically earlier is fully supported here.
+
+Security and compliance are two major reasons Microsoft and OpenAI partnered. As a hyperscaler, Microsoft ensures strong security measures and industry-grade compliance so that your data remains protected. Whether it's network isolation, private endpoints, or enterprise governance, Microsoft provides the necessary infrastructure.
+
+Collaboration features are also built in. Teams can work together on deployed models, test endpoints, and integrate them into applications. Deployment is straightforward—you can deploy your model to a web app, use secure API endpoints, and allow different teams to interact with it.
+
+Scalability is another key aspect. Whether you're starting small or aiming for enterprise-level workloads, Azure provides auto-scaling, GPU clusters, and the compute power required for large-scale AI processing. No matter the size of your project, Azure infrastructure can support it.
+
+With this, you now have a solid understanding of what Azure OpenAI Studio is and what it provides. In the next video, we’ll dive deeper, explore the interface, and do a live demo to play around with the Azure OpenAI Studio environment.
+
+# **I) Demo: Azure OpenAI Studio Walkthrough**
+
+In the previous video or lecture, you gained a good understanding of Azure OpenAI Studio from a theoretical point of view. Now the question is: how does it actually look in reality? The best way to see this is to go to Azure OpenAI, navigate to your service or deployment, and open it. For example, here we have the Cloud Alchemy deployment. From this deployment page, you can directly click on Azure OpenAI Studio, which will launch the studio interface for you.
+
+When the studio opens, you’ll notice something important. Earlier, when we were inside Azure, the URL was portal.azure.com, but now you’ll see the URL has changed to oai.azure.com. This is the same thing I explained in the theoretical lecture: Azure OpenAI Studio uses this separate interface specifically for OpenAI-related models and features.
+
+Inside the studio, Microsoft has organized everything into different sections called playgrounds, each designed for a specific use case. The Assistant Playground is for pre-built conversational state management and customization tools. "Bring Your Own Data" supports RAG workflows, which is something we discussed extensively earlier. Then you have the Chat Playground, which is used when you want to work with GPT models such as GPT-3.5, GPT-4, or GPT-4 Turbo.
+
+Next, there is the Completions Playground. This area is primarily for tasks such as summarization, content generation, classification, writing emails, generating quizzes, and other structured outputs. Then, of course, there is the DALL-E Playground, which by now you know is used for image generation. Each of these playgrounds serves a very specific purpose.
+
+As I mentioned earlier, Microsoft calls these sections “playgrounds” because they are designed to be flexible, experimental spaces. Here, you can explore ideas, test data, try out model configurations, train and refine your models, and eventually deploy them to production once you're satisfied.
+
+Now, here is a very important point. If you enter the Chat Playground, you'll notice that nothing shows up initially. That’s because, for everything except DALL-E, you must first create a deployment. You cannot directly start using GPT-3.5, GPT-4, or any of the other models. The process is simple: choose a base model and create a deployment from it. Once the deployment exists, the playground becomes usable.
+
+The same applies to the Completions Playground. You will see a message saying “No deployment exists.” This means you must create a deployment first. Once you do that, you can start working with prompts and generating responses. DALL-E is the only exception—you don’t need to create a deployment for it. You can directly enter a prompt and generate images.
+
+Under the Assistants section, which we’ll explore in a later lecture, the same rule applies: it also requires a deployment before use. Beyond these, the studio gives you access to the management side of things as well. You can view all your existing deployments, check the list of models available—such as DALL-E, GPT-4, GPT-4 Turbo—and see whether each model is deployable or not. "Deployable" simply means you can create a deployment from that base model.
+
+There is also a section called Data Files, which is useful if you want to upload your own datasets for training, testing, or fine-tuning processes. This is especially relevant when we talk about custom model fine-tuning, which requires properly formatted training and validation files.
+
+We also discussed quotas in an earlier lecture. The quota section in the studio lets you see your limits—such as tokens per minute—for each model and each region. If you change the region, you will notice that the quotas differ. You can also track your usage directly in the portal. And if needed, you can request a quota increase using a simple form where you describe your use case. Microsoft reviews it and extends quotas if appropriate.
+
+Another key feature is Content Filtering. As mentioned before, Microsoft provides strong security and compliance features, and content filtering is a major part of that. You can create content filters based on categories like sexual content, hate, self-harm, and violence. These filters apply to both inputs (your prompts) and outputs (the model’s responses). While you can configure or add strictness, you cannot disable core safety categories such as sexual or hate content. This is extremely useful for enterprises that require strict compliance and safe model outputs.
+
+After reviewing all these features, you can always return to the main studio homepage. With this, you now have a solid understanding of the Azure OpenAI Studio or Azure AI Studio environment, where you can work with different AI models in a clean, organized interface.
+
+In the next lecture, we will explore the Chat Playground in more detail.
+
+# **J) Chat Playground - Demo: Create a Deployment of Chats Playground**
+
+Okay, so now the time has come to actually work with the Chat Playground. This is the area where you can start using your different GPT models in Azure OpenAI. One thing you must always remember is that, unlike the public OpenAI platform where we directly specify the model name (like GPT-3.5 or GPT-4), Azure OpenAI never works that way. In Azure, you must create a deployment first, and only then can you use that model inside the playground or in any API call.
+
+So let’s start by creating a deployment. It’s a very simple process. The first thing it asks for is the base model. So let's keep the base model as GPT 3.5 Turbo 16K. After this, you will see the model version option. You can either select a specific version or choose auto-update. It’s generally better to select auto-update because whenever Microsoft or OpenAI release a new version of GPT-3.5 Turbo 16K, your deployment will automatically upgrade to the latest version without any manual step.
+
+Next, you will see the deployment type, which we will leave as Standard. After this, we need to choose the deployment name, and this is extremely important. Why? Because this deployment name is what you will use in all your API calls. Wherever you earlier used model="gpt-4" or model="gpt-3.5-turbo", here you will instead pass the deployment name you define now. So choose the name carefully.
+
+Since we are dealing with chat-based features or GPT-4-like interactions, we can choose something like gpt-azureopenai-text. Azure allows hyphens, so you can define any meaningful and clean name. This name will represent your deployment everywhere in your application.
+
+Then, if you scroll down, you will see the Advanced Options. The first one is the Content Filter. As we discussed earlier, content filtering applies to both input and output. It checks whether the content generated or submitted relates to things like sexual content, hate, violence, self-harm, harassment, etc. If you haven't created a custom content filter, you can continue using the default one.
+
+Next comes the TPM — Tokens Per Minute. We already discussed TPM quotas in detail. Here, in this example, the TPM limit for the model is 120K tokens per minute. This is 120K for your entire subscription, and you can choose whether you want to give all 120K to this deployment or reduce it. For example, you might reduce it to 60K so that you can create a second deployment and allocate the remaining 60K there.
+
+Then you will see an option called Dynamic Quota. This is a newer feature introduced by Microsoft. If enabled, your application can temporarily take advantage of extra capacity when Microsoft has available headroom. This helps avoid API failures due to sudden spikes in usage. But remember, this is temporary and not guaranteed. Still, it’s a good idea to keep it enabled.
+
+Finally, once all settings look fine, you click Create. After a few moments, your deployment gets created, and now you can enter the Chat Playground.
+
+In the next lecture or video, we will look at what the Chat Playground actually contains, what the main components are, and how everything works — first theoretically, and then with hands-on practical examples inside the playground.
+
+# **K) Understand the Chat Playground**
+
+Before we go deeper into the Chat Playground, it’s important to understand the three main sections or artifacts of the Chat Playground interface. To make things clearer, imagine the playground divided visually into three parts: Part 1, Part 2, and Part 3. This division directly reflects how the interface appears in the Azure OpenAI portal.
+
+Let’s start with Part 1, which is the Setup Section, located on the left side. This is where you define your prompts and configure how the assistant should behave. Essentially, this section is responsible for setting the tone, personality, and instructions for your model. You can also add your own data here, which ties into the concept of RAG (Retrieval-Augmented Generation) — something we will cover in future sessions. Another useful feature in this section is the availability of templates. For example, you can select an Xbox support template or a Tax Assistant template. When you select a template, the system message is automatically populated.
+
+The System Message is very important. It tells the model what kind of assistant it should be. For example, the system message might say, “You are an AI assistant that helps people find information.” If you are building a tax assistant, you can instruct it: “You are a US-based tax assistant, and you only answer tax-related queries.” You can even add more examples to instruct the model on what it should or should not answer — such as telling it to decline sports-related questions if it’s strictly a tax assistant. All of this is configured in the setup area.
+
+Next is Part 2, which is the actual Chat Section. This is where you input your text or prompts, just like using ChatGPT. For instance, you may type: “Who is the Prime Minister of India?” Here, you will also notice that token usage is displayed and increases as the conversation progresses. You can clear the conversation history or reset the context easily. This section also provides additional tools such as Playground Settings, which we will explore later, and two very important features: View Code and Show JSON.
+
+The View Code option is extremely helpful. Whatever you are doing in the playground — whether sending prompts, adding system instructions, or modifying parameters — Azure automatically generates the corresponding API code for you. Unlike OpenAI where we had to write the API code manually, here you can simply click “View Code” and retrieve the entire working code snippet. The Show JSON option lets you inspect the raw JSON request and response, including the conversation history and context being passed to the model.
+
+Finally, we come to Part 3, which is the Configuration Section. This section is crucial because it allows you to specify parameters and settings used during the conversation. You can choose the Deployment here — remember, in Azure you always reference the deployment name, not the model name directly. This is the equivalent of specifying the model in OpenAI’s API.
+
+Then you have your Session Settings. These include how many past messages should be preserved as context. This is important because the model relies on this conversation history. For example, if you ask “Who is the Prime Minister of India?” and then your next question is “What are his contributions?”, the model knows “his” refers to the Prime Minister because it uses the stored context. You can increase or decrease the number of past messages retained. This section also shows your current token count, which is important given the TPM (Tokens Per Minute) limits.
+
+With this understanding of the three key areas — Setup, Chat, and Configuration — you now have a solid foundation of how the Chat Playground is structured. In the next lecture, we will move into a hands-on demonstration and actually experiment with the Chat Playground to see how everything works in real time.
+
+# **L) Demo: Deploy a Webapp from the Playground**
+
+This is a quick walkthrough to show how easy it is to move your solution from development or UAT into production. Microsoft has simplified this process by providing a Deployment Utility directly within the Azure OpenAI environment. Once you have tested your model, completed fine-tuning, and ensured everything works as expected, you can deploy it to a new web app with just a few steps. That is exactly what we’re going to look at here.
+
+When you choose to deploy your model, Azure clearly states that the web app will be configured with Azure Active Directory (AAD) authentication enabled. This means that the same authentication mechanism you use to sign in at portal.azure.com will apply to your web app as well. So it is important to remember that the authentication for accessing your deployed chatbot will be tied to Azure AD.
+
+The deployment process itself is straightforward. First, you need to give your web app a name. For example, if you name it my-ai-chatbot, that name becomes part of the endpoint through which your application will be accessed. So be careful while choosing this name, because it forms the base URL of your final web app.
+
+Next, you select your subscription — for example, Azure Cloud Alchemy — and then choose the appropriate resource group, such as AO-ORG. After that, you select the location. One thing to note here is that the regions are listed alphabetically, not grouped geographically. So, for example, East US may appear toward the top while West US appears much further down the list.
+
+Then you select the pricing plan. You can choose Free, Basic, or Basic 2. In most cases, it is better to choose one of the Basic plans. The Free tier often comes with performance issues such as slow responses, errors, or even hanging. Since the cost difference is small, using Basic or Basic 2 is generally the more stable choice.
+
+Once the plan is selected, you should enable the Chat History setting. This is essential because the chatbot needs to maintain context between messages, just like it does in the Azure OpenAI playground. With everything filled out, you simply click Deploy. The deployment may take anywhere between 5 to 10 minutes depending on your environment. On a free plan, it can sometimes take even longer.
+
+After deployment completes, you will see an option called Launch Web App. Clicking it will open your newly created chatbot application. The URL will follow the same name you provided earlier, such as my-ai-chatbot.azurewebsites.net. Once the web app opens, you can immediately start interacting with your chatbot. For example, you can ask, “Who is the Prime Minister of India?” and it will generate the appropriate response — such as stating Narendra Modi and listing his accomplishments.
+
+Everything you tested earlier inside the Azure OpenAI playground now works seamlessly inside your deployed web application. It’s a smooth and impressive process, demonstrating how easily you can move from development to a real production-ready chatbot web app.
+
+# **M) DALL-E PlayGround - Demo on Generating Images**
+
+Now that you have a solid understanding of the Chats Playground, it’s time to move into the DALL·E side of things. DALL·E, as you might remember, is used when you want to generate images using OpenAI. Before we begin working with it, there is an important detail to notice in the Deployments section. You will see a deployment that comes pre-created by default. The GPT text deployment we used earlier in the Chats Playground was created manually, but the DALL·E deployment is already provided for you. This means you don’t need to create a separate deployment in order to use DALL·E. However, for Chats Playground, Completions, or Assistants, you do have to create your own deployment. I wanted to highlight this difference so you are aware of it while working across different sections.
+
+Going back to the DALL·E interface, the process is very simple. You can choose the deployment to use — such as DALL·E 2 or DALL·E 3. In this example, we select DALL·E 3 because it comes ready by default. When you click on View Code, you will immediately notice the main difference compared to the Chats Playground. The client setup remains the same: Azure OpenAI, API version, Azure endpoint — all of that is unchanged. But the key difference lies in the model reference. For DALL·E, you directly specify the model name like dall-e-3. You are not using a deployment name here, whereas in the Chats Playground you must specify the deployment name. This distinction is important to keep in mind when switching between chat-based and image-based use cases. Everything else, including your API key, remains as usual.
+
+Let’s take the same example we used previously. The prompt is: Create an image of a black dog with black eyes and black color, and a white cat with blue eyes and a necklace. This is similar to an example we used when we learned OpenAI earlier and wrote the API calls manually. Now, instead of coding it ourselves, we simply paste the prompt into DALL·E and let Azure handle the generation.
+
+After submitting the prompt, you will see that the image is generated instantly. If you are not satisfied with the image, you can click Generate Image again. There are also additional options available — you can copy the prompt, regenerate a new variation of the image, download the current image, or view the code behind the generation. You can even delete the image if you want to remove it from the interface. When the next image loads, you will see it reflects exactly what we asked for: a black dog with black eyes and black fur, and a white cat with blue eyes wearing a necklace.
+
+This demonstrates how smooth and visually interactive the DALL·E experience is within Azure OpenAI. You can quickly generate images, experiment with variations, and access the corresponding code whenever you need it.
+
+# **N) What is Completions Playground ?**
+
+Believe you guys are enjoying playing around with the Azure OpenAI playground. After taking a look at the chat playground, it’s time to explore the Completions Playground, which is another important feature in Azure OpenAI.
+
+As the name suggests, the Completions Playground is all about completions. You provide a prompt, and based on that prompt, Azure OpenAI generates a completion for you. You can think of it in multiple ways: you give it a question and ask it to answer; you tell it to write an email in a specific format; or you want a quiz consisting of multiple-choice questions, answers, and explanations. The completions playground can handle all of these use cases.
+
+The key difference between the Completions Playground and the Chat Playground is that the completion playground often comes with pre-configured scenarios and examples that demonstrate the model’s capabilities. These examples help users understand how to craft effective prompts and how to get the best results from the model. Essentially, your output depends heavily on the prompt you provide.
+
+Another benefit is that completions playground includes API integration examples. This allows developers to see how to call the OpenAI API directly from the playground, making it easier to apply the same implementation in real projects. Along with that, you get real-time feedback. Whenever you modify or refine your prompt, the playground instantly generates the updated output. This helps you understand how your prompt influences the model’s response.
+
+Now, let’s look at how the Completions Playground works in practice. When you first open it, you may see a message saying “No deployment exists. You need a deployment to work in the playground.” This is a common issue users face. You might think it’s working because the example prompts appear, but once you click Generate, you will see an error such as:
+
+“Completion operation does not work with the specified model.”
+
+At this point, the playground suggests checking your deployments. So, when you go to the deployment section, you might notice that although you already created a deployment for the chat playground, you may have also created another deployment for completions—such as completions GPT based on GPT-3.5-Turbo-16K. However, even with that deployment, it still doesn’t work.
+
+The reason lies in the documentation. Not every feature is supported by every model. For example, GPT-3.5-Turbo-16K is an older model. It supports basic function calling, but it does not support completions. That is why the completions playground throws an error.
+
+To fix this, you must deploy a model that supports the completions API, such as GPT-3.5-Turbo-Instruct or the updated GPT-3.5-Turbo model. These models explicitly support completion-type operations.
+
+So, let’s walk through creating a correct deployment. You go to the deployments page and create a new deployment. This time, you choose the model GPT-3.5-Turbo. Make sure the base model selected is correct. Then, for the deployment name, you can use something like:
+
+completions-deployment-01
+
+Leave everything else as default, enable it, and create the deployment.
+
+Once this new deployment is created, go back to the Completions Playground. You’ll notice that the earlier error is gone, and your new deployment is now visible in the dropdown list. You can select it and start using completions without issues.
+
+However, one important tip: a new deployment takes a few minutes to become fully active. If you try using it immediately, you might still run into errors. So, give it about 5–10 minutes before testing it.
+
+With this setup complete, you are now ready to work with the Completions Playground. In the next lecture, we will explore how to use it with real examples.
+
+# **O) Demo: Completions Playground**
+
+After giving your new deployment five to ten minutes to fully initialize, your model will be completely ready. Once it is fully deployed, you can go back to the Completions Playground, open the dropdown menu, and you will now be able to select your deployment. At this point, all the example prompts in the completions playground will work smoothly for you.
+
+The playground provides a wide range of examples based on different use cases: generating quizzes, writing emails, creating product ideas, building chatbots, and more. These examples help you understand how the model behaves with different prompt structures. So let’s walk through a few of them to get a proper look and feel of how the completions playground works.
+
+Let’s start with the second example: summarizing key points from a financial report. Imagine you are dealing with a long financial report—one or two pages of detailed numbers—and you’re the CFO. You don’t have time to manually go through every line. Instead, you simply paste the text into the playground and ask the model to summarize the key points. It instantly begins generating a concise summary for you. Based on the provided text, it identifies important financial numbers: revenue increase, margin changes, production performance, cloud service revenue, risk factors, and external influences. This way, instead of reading multiple pages, you instantly get the highlights—perfect for quick review.
+
+Another example you can experiment with is generating a quiz. For instance, you can write a prompt like “Create a multiple-choice quiz from the text below. The quiz should contain at least five questions.” Then, you paste your content—in our case, a small paragraph describing GPT-3.5 models. The model analyzes the text and creates a five-question quiz, complete with multiple-choice options and correct answers. It bases everything solely on the text you provided, not on external knowledge. This makes it perfect for training materials, study guides, or quick knowledge checks. Sometimes the response may take a few seconds depending on the model and backend infrastructure, but it produces a complete and accurate quiz every time.
+
+Another very useful capability is explaining SQL queries. You can take any SQL query—say, a simple join between two tables—and ask the model to explain what it does. For example, consider the query:
+
+SELECT e.emp_number, d.dep_name, FROM employee e, department d, WHERE e.department_number = d.department_number
+
+You simply paste this into the prompt and ask, “Explain the SQL query.” Once you generate the response, the model explains exactly what is happening: it is selecting two columns from two different tables, employee and department; it retrieves the employee number and department name; and it joins the tables based on the department number column. Even though you only provided column names like emp_number or dep_name, the model intelligently infers their meaning and gives you a clear explanation. This is extremely helpful when learning SQL or reviewing someone else’s code.
+
+The completions playground supports several other use cases as well. You can generate emails, classify text into different categories, cluster unstructured text, create product names, or even structure data. The possibilities are endless. The idea is to explore and experiment with different prompts to understand how the model responds.
+
+So go ahead, play around with the examples, try out your own prompts, and enjoy the capabilities of the completions playground.

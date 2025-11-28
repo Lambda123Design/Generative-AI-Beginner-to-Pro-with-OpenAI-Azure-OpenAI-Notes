@@ -154,6 +154,26 @@
 
 **O) Demo: Completions Playground**
 
+**VIII) AI Foundry - Covered in his AI Foundry course; Please refer to that Notes**
+
+**IX) Azure OpenAI - Making API Calls**
+
+**A) API Calls - Intro**
+
+**B) OpenAI API Calls Vs Azure OpenAI API Calls**
+
+**C) Demo: Create a New Azure OpenAI Service**
+
+**D) Demo: Get the Values of Endpoint URL & API Keys**
+
+**E) Demo: Create an azureopenai.env File**
+
+**F) Demo: Get the value of api_version**
+
+**G) Demo: Create a New Deployment of Chats Completion**
+
+**H) Demo: Make a Simple Azure OpenAI API Call**
+
 
 
 
@@ -1655,3 +1675,149 @@ You simply paste this into the prompt and ask, “Explain the SQL query.” Once
 The completions playground supports several other use cases as well. You can generate emails, classify text into different categories, cluster unstructured text, create product names, or even structure data. The possibilities are endless. The idea is to explore and experiment with different prompts to understand how the model responds.
 
 So go ahead, play around with the examples, try out your own prompts, and enjoy the capabilities of the completions playground.
+
+# **VIII) AI Foundry - Covered in his AI Foundry course; Please refer to that Notes**
+
+# **IX) Azure OpenAI - Making API Calls**
+
+# **A) API Calls - Intro**
+
+Hi folks, this is your instructor, Joi from Cloud Alchemy Limited. In this module, we will be talking about API calls. You might remember that with OpenAI, we covered this in great detail — we wrote a lot of Python code, especially in Jupyter Notebook, where we made API calls directly to OpenAI. Now the question is: what if you need to do the same using Azure OpenAI?
+
+In many of the previous modules, you would have seen me using the Azure OpenAI Studio. But in the real world, you will not be using the Studio as much. Instead, your applications will make API calls directly to Azure OpenAI. That is why this module focuses on everything you need to know about making Azure OpenAI API calls.
+
+We will begin with the basics, starting with a comparison between OpenAI API calls and Azure OpenAI API calls. I will show you a clear distinction — what makes an OpenAI call different from an Azure OpenAI call, and what changes in the request structure.
+
+After understanding the differences, we will go through the complete end-to-end process of making a basic API call to Azure OpenAI. If I tell you that you need an endpoint URL, an API key, and an API version, it might sound complicated — but don’t worry. We will take it step by step. First, I will explain how to obtain your endpoint URL.
+
+We will start by actually creating a new Azure OpenAI service, and we will work directly with that resource. Then I will explain the importance of the API key, how to generate it, and how to retrieve the value for the API version. Each of these points will be covered in detail so that nothing feels confusing.
+
+After that, I will show you how to create a new chat deployment and how you can use the model or the deployment you created on top of that model to make simple Azure OpenAI API calls. We will go step by step, and you can also follow the resources section for guidance.
+
+By the end of this module, you will feel very confident in making API calls to Azure OpenAI. I hope you enjoy the module. Thanks for watching.
+
+# **B) OpenAI API Calls Vs Azure OpenAI API Calls**
+
+In one of the previous lectures, we studied in detail how to make API calls using OpenAI. In this lecture, we will focus on how to make API calls using Azure OpenAI. The good news is that many concepts are similar between OpenAI API calls and Azure OpenAI API calls. However, there are still some important differences you must keep in mind when working with Azure OpenAI. This session will help you understand those differences clearly.
+
+To begin, let’s quickly recap what we learned earlier when working with OpenAI’s Python code. In the OpenAI code snippet, the first line was import os, which simply means you are importing Python’s built-in OS module. This module allows you to use operating system functionality such as reading and writing files. The reason we import os is because we read our environment variables through it.
+
+Next, we had the line from openai import OpenAI. This means that from the OpenAI library, you are importing the OpenAI class. After that, we created an instance of this class by writing client = OpenAI(...). This initializes the client object, and while instantiating it, we pass the API key. Due to security best practices, we never hard-code the API key directly in the script. Instead, we store it in an environment variable—like OPENAI_API_KEY—and read it from there. You may remember from earlier demos that we created an .env file (for example, openai.env) and stored the key there.
+
+Now let’s examine what changes when we move to Azure OpenAI. Although the structure looks similar, several points are different. Just like before, the first line is import os, which remains unchanged. But the next line changes: instead of importing OpenAI, we now write from openai import AzureOpenAI. This is the first clear difference—you are now importing the AzureOpenAI class instead of the standard OpenAI class.
+
+When we instantiate the client, the differences become more significant. In Azure OpenAI, you create the client using something like:
+
+client = AzureOpenAI(
+    api_key = os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version = "2023-12-01-preview",
+    azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+)
+
+
+There are three important components here:
+
+API Key – Similar to before, but now you use the environment variable associated with Azure, such as AZURE_OPENAI_API_KEY.
+
+API Version – This is new and very important. You must specify the API version you want to target. For example, "2023-12-01-preview".
+The API version determines the available features and behavior. For production environments, you should use a stable, GA (generally available) API version instead of a preview version. Microsoft documentation provides a list of supported versions, and I will include the link in the resources section.
+
+Azure Endpoint – This is another major difference.
+Instead of simply relying on the model name like GPT-4 or GPT-3.5, Azure requires a service endpoint URL. This endpoint comes from your Azure OpenAI resource—specifically the URL of the OpenAI service you created in Azure. You will see how to fetch this endpoint during the demo.
+
+Once the client is set up, the way you generate outputs—whether through completions, chat completions, or embeddings—remains conceptually similar. For example, in OpenAI you might write:
+
+client.completions.create(
+    model="gpt-4",
+    prompt="Write something..."
+)
+
+
+However, there is a key difference when doing this in Azure OpenAI. In Azure, you cannot simply give the model name directly. You must provide the deployment name, not the model name. This is because Azure OpenAI works on a deployment-based system. You first create a deployment (for example, a deployment of GPT-4), give it a name of your choice, and then use that name in your API call.
+
+So instead of writing model="gpt-4", you must write something like:
+
+model="my-gpt4-deployment"
+
+This deployment name must match exactly what you configured in the Azure Portal.
+
+# **C) Demo: Create a New Azure OpenAI Service**
+
+In this lecture, we will create a new Azure OpenAI service instance. You can either use the existing Azure OpenAI service that you created earlier, or you can create a new one. To keep things simple and easy to understand, we will create a new Azure OpenAI service instance. The process is straightforward: click on Create and select Azure OpenAI, then choose your subscription — in my case, I am selecting Azure Cloud Alchemy, but you can choose your own. Similarly, select a resource group; since I already have one, I am using the existing resource group. Next, provide a name such as Cloud Alchemy, or something related to API calls, just to keep it simple so that it’s clear what this instance will be used for. After that, click Next. 
+
+For the networking settings, keep everything as default, and for tags, we don’t need to make any changes. Then, proceed to Review and Submit. The deployment is in the East US region, and once everything looks good, click Create. You will then see the deployment being submitted, and the status will show as “Deployment in progress.” After a short while, you will have your Azure OpenAI service instance up and running, which we will use in our demos for making API calls. If you go to Home and navigate to Azure OpenAI, you will see the status as “Creating,” and soon it will change to “Succeeded.” Once it shows “Succeeded,” we can move on to the next steps. Thanks.
+
+# **D) Demo: Get the Values of Endpoint URL & API Keys**
+
+In the previous lecture, we created a new Azure OpenAI service instance and named it Cloud Alchemy API Calls. In this lecture, we will focus on understanding the importance of two key components that we introduced earlier: API keys and the Azure endpoint required for making API calls. We will also look at where these values can be found in the Azure portal.
+
+To begin, open your Azure OpenAI service instance — in my case, Cloud Alchemy API Calls, though yours may have a different name. Once you click on the service, you will notice on the right-hand side a section that displays details such as the API kind, which in this case is OpenAI, and the pricing tier. You will also see two separate links: one for the endpoint and one for the keys. Interestingly, both links redirect you to the same page, titled Keys and Endpoint, even though they appear as separate options.
+
+Let’s first understand the endpoint. When making an API call, you must provide the Azure endpoint URL. To view it, simply click the link that says “Click here to view the endpoint.” This is the URL you will use when making API calls in your demos. The structure is straightforward: the first part of the URL is the name of your Azure OpenAI service instance — for example, cloudalchemyapicalls — and the second part is the domain openai.azure.com. That’s all you need to remember: service instance name + Azure OpenAI domain.
+
+Next, let’s discuss the API keys. These keys are essential for authentication when accessing the Azure OpenAI service. They should always be stored in environment variables, not hard-coded into your scripts. The page clearly reminds you that these keys are used to access the Azure OpenAI APIs and must never be shared. For the purpose of this demo, we may view them, but in real-world scenarios, these keys should be securely stored in Azure Key Vault, and never exposed publicly.
+
+Azure provides two API keys, and many learners wonder why. The reason is to support uninterrupted access. For example, if you regenerate the first key, the second key can still be used by your application without downtime. This allows for smooth key rotation, which is a best practice in production environments. Typically, organizations rotate these keys every three or six months.
+
+If you choose to reveal the keys, you will see the first key begins with 32A and the second one begins with 5F. You can hide or regenerate them at any time. Just remember: having two keys ensures continuity and secure key rotation without impacting your running workloads.
+
+# **E) Demo: Create an azureopenai.env File**
+
+In the previous lecture, we learned how to retrieve the values for the Azure endpoint URL and the API keys from the Azure portal. In this lecture, we will move one step further and create the environment file, which is essential for authentication and for making API calls to Azure OpenAI. This environment file will store the endpoint URL and the API key as environment variables.
+
+To begin, open Jupyter Notebook through Anaconda, just as you usually do. Inside Jupyter, create a new text file. This file will store the environment variables that your Python code will load later. In the text file, start by defining the first environment variable, such as AZURE_OPENAI_ENDPOINT, and assign it the endpoint URL inside double quotes. If you’re unsure where to find this value, simply go back to your Azure OpenAI service instance in the portal. Open Cloud Alchemy API Calls (or the name of your instance), navigate to the Endpoints section, and copy the endpoint URL. Paste this value into your text file.
+
+Next, define the second environment variable for your API key, for example: AZURE_OPENAI_API_KEY= followed by your API key in double quotes. Again, return to the Azure portal, go to your OpenAI service instance, and copy Key 1 from the Keys section. Paste it into your environment file. At this point, you now have both required values: the endpoint and the API key.
+
+Once both variables are added, save the file and rename it to something meaningful like azure_openai.env. This file will be referenced later when we write the Python code to make actual Azure OpenAI API calls.
+
+In the next lecture, you will also understand the importance of the API version, which is a mandatory parameter when calling Azure OpenAI through your code. So stay tuned for that.
+
+# **F) Demo: Get the value of api_version**
+
+Now that we have already addressed the Azure endpoint URL and the API key that we need to use, the third important element to understand is the API version. Choosing the correct API version is crucial for making successful Azure OpenAI API calls. To determine which version to use, you can visit learn.microsoft.com, where Microsoft provides detailed documentation on the API version lifecycle.
+
+According to Microsoft, new preview API releases are introduced every month. From 2025 onward, Azure OpenAI will support only the last three preview API versions. This means older preview versions will no longer be supported, and if you are currently using an older version, you must migrate to a newer one. This is especially important to ensure that your applications continue to function correctly.
+
+For development purposes, it is acceptable to use the latest preview API versions. In fact, these preview versions often include the newest Azure OpenAI features. The documentation clearly lists what each version contains, making it easy to decide which one meets your needs. For example, if you want to use the Assistants API, you must use a version that explicitly supports it, which is typically one of the most recent preview releases.
+
+Scrolling further down the documentation, you will also find the latest GA (Generally Available) API release. This is extremely important for production environments. In production, you should never rely on preview versions; instead, you must always use a GA version because it is stable, fully supported, and recommended for enterprise workloads. Microsoft also emphasizes that before upgrading to a new API version, you should always test your application thoroughly to ensure that the update does not introduce breaking changes.
+
+To recap, you now clearly understand the three essential components required for Azure OpenAI API calls: the API key, the API version, and the Azure endpoint URL. With these fundamentals in place, we can now move on to the next part, which is generating completions. Remember, when working with completions in Azure OpenAI, we use client.completions.create(), and in doing so, the model name cannot be used directly. Instead, you must reference a deployment that you create on top of the model.
+
+In the next video, we will create a custom deployment and continue building on these concepts. Thanks for watching.
+
+# **G) Demo: Create a New Deployment of Chats Completion**
+
+Hello and welcome. As we discussed earlier, when making API calls in Azure OpenAI, you cannot directly specify the model name—for example, GPT-3.5 or GPT-4. Instead, you must reference a deployment, which is essentially a custom instance created on top of an OpenAI model. In this lecture, we will go ahead and create that deployment.
+
+To begin, I navigate to my Azure OpenAI service instance, which in this case is Cloud Alchemy API Calls. From there, I open Azure OpenAI Studio and select the Chat Playground. As soon as the playground loads, it clearly shows that no deployment currently exists, which means we need to create one before using any model.
+
+To create a deployment, I click on the option to add a new deployment. I give it a name—something simple and identifiable—such as gpt35-api-calls. This exact deployment name is important because it is the same name you will reference later in your Python code when making API calls.
+
+Next, I select the base model for the deployment. In this example, I choose GPT-3.5-Turbo. For the model version, I leave it on the default option, which is Auto-update to default (0301). I also keep the deployment type as Standard tokens, which is suitable for our usage. The content filter is left unchanged. Once everything looks correct, I click Create.
+
+Azure then processes the request and successfully creates the deployment for us. With the deployment in place, we are now ready to use it in upcoming lectures, where we will start making actual API calls directly against this deployment.
+
+# **H) Demo: Make a Simple Azure OpenAI API Call**
+
+The time has finally come for you to make your own API calls to your Azure OpenAI resources and the deployments you created. All the preparation and setup we completed earlier was leading up to this point, and in this lecture, you will see how everything comes together. The process is actually quite simple. You can even go to the resources section, copy the code, and paste it directly, because now you already understand each component and know exactly how to use it.
+
+To begin, open your Jupyter Notebook—launched through Anaconda—and start a new kernel. Create a new document and make sure that your AzureOpenAI.env file is already in place. This file contains two essential items: your API key and your Azure endpoint URL. Also ensure that you have topped up your credits in the Billing section, so that you have sufficient credit available for making API calls.
+
+Next, you can run pip install openai. While it may not be strictly necessary—because it might already be installed—it is still safe to run it. If it’s already present, Jupyter will simply confirm that all requirements are satisfied.
+
+After that, you can copy the code. Even though we have already discussed each part in detail earlier, here is a quick walkthrough. First, we import the required classes:
+from openai import AzureOpenAI imports the AzureOpenAI class from the OpenAI library.
+from dotenv import load_dotenv imports the function needed to load our environment file, so we can read the endpoint and API key.
+
+Next, we instantiate the client using the AzureOpenAI class. For the parameters, we pass the Azure endpoint and API key—both retrieved from the environment file. We also specify the API version. As explained earlier, you must always provide an API version while using Azure OpenAI. In this example, I selected the latest version available in the Microsoft documentation, which at the time was the May 2024 preview version.
+
+After setting up the client, we make the actual API call. We say:
+response = client.chat.completions.create(...)
+This calls the chat completions endpoint of the Azure OpenAI client. Inside the create method, we specify the deployment name in the model argument. This is the same deployment name we created earlier—in this case, "gpt35-api-calls". Under the messages list, we define the role as user and give a simple prompt:
+“Give me the names of the U.S. presidents till now.”
+
+Because this deployment uses a GPT-3.5-based model, its knowledge cutoff is around late 2021. Therefore, when you run the cell, you will see that the response lists the U.S. presidents starting from George Washington, all the way up to Joe Biden as of the model’s training data. You may also see Donald Trump listed from 2017 to 2021, followed by Joe Biden as the present president according to the model’s knowledge cutoff.
+
+And that’s it. With this demonstration, you now have a complete understanding of how to make API calls to Azure OpenAI using Python. Everything—from the environment setup, endpoint URL, API key, API version, and deployment—comes together here.

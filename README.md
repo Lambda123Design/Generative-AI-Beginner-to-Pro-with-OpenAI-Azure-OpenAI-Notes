@@ -174,7 +174,7 @@
 
 **H) Demo: Make a Simple Azure OpenAI API Call**
 
-**No needed Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**
+**No need Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**
 
 
 
@@ -1822,4 +1822,4 @@ Because this deployment uses a GPT-3.5-based model, its knowledge cutoff is arou
 
 And that’s it. With this demonstration, you now have a complete understanding of how to make API calls to Azure OpenAI using Python. Everything—from the environment setup, endpoint URL, API key, API version, and deployment—comes together here.
 
-# **No needed Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**
+# **No need Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**

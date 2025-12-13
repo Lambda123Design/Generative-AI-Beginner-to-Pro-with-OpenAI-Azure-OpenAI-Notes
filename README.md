@@ -174,7 +174,7 @@
 
 **H) Demo: Make a Simple Azure OpenAI API Call**
 
-
+**No needed Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**
 
 
 
@@ -1821,3 +1821,5 @@ This calls the chat completions endpoint of the Azure OpenAI client. Inside the 
 Because this deployment uses a GPT-3.5-based model, its knowledge cutoff is around late 2021. Therefore, when you run the cell, you will see that the response lists the U.S. presidents starting from George Washington, all the way up to Joe Biden as of the model’s training data. You may also see Donald Trump listed from 2017 to 2021, followed by Joe Biden as the present president according to the model’s knowledge cutoff.
 
 And that’s it. With this demonstration, you now have a complete understanding of how to make API calls to Azure OpenAI using Python. Everything—from the environment setup, endpoint URL, API key, API version, and deployment—comes together here.
+
+# **No needed Notes for rest of the Course; They are all already what has been done for AWMS Working and AI Foundry Course, similar to create Index and retrieving data; Course is always with you; Refer it**
